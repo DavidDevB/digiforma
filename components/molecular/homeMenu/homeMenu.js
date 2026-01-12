@@ -2,11 +2,17 @@
 
 const homeMenu = () => {
 
-    const style = `<style>
+    const style = `
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400,300&display=swap" rel="stylesheet">
+    <style>
 
     .V2_LeftMenuLayout__nav {
     display: block;
     width: var(--sidebar-width);
+    font-family: 'Satoshi', sans-serif;
+    font-weight: 500;
+    font-size: var(--font-size-2);
+    color: var(--colors-grey-900);
 }
 
     .SidebarNavigationContent {
@@ -26,6 +32,13 @@ const homeMenu = () => {
     margin-bottom: var(--space-4);
     padding: 0;
     padding-bottom: var(--space-4);
+}
+
+.SidebarNavigationContent__navigation {
+    cursor: pointer;
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--border-radius-1);
+    margin: 5px 0;
 }
 
     </style>`
