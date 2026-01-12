@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil Digiforma</title>
+    <style>
+
+        :root {
+            --space-4: 24px;
+            --surface-gradient: linear-gradient(to bottom, #f8f9fa, #e9ecef);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        .V2_LeftMenuLayout {
+    position: relative;
+    height: 100dvh;
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.V2_LeftMenuLayout__body {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-4);
+    height: 100%;
+    overflow: auto;
+    padding: var(--space-4);
+    background: var(--surface-gradient);
+    isolation: isolate;
+}
+    </style>
+</head>
+<body>
+    <div class="V2_LeftMenuLayout">
+        <div class="V2_LeftMenuLayout__body">
+
+        </div>
+    </div>
+    <script type="module">
+        import homeMenu from '../../components/molecular/homeMenu/homeMenu.js';
+
+        document.querySelector(".V2_LeftMenuLayout__body").innerHTML = homeMenu();
+    </script>
+</body>
+</html>
