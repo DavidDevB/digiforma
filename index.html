@@ -1,1 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./components/molecular/header/header.css">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <header id="header"></header>
 
+    <script type="module">
+
+    import { renderHeader, initHeader } from './components/molecular/header/header.js';
+
+    document.getElementById('header').innerHTML = renderHeader();
+        initHeader();
+    
+    </script>
+    
+</body>
+</html>
