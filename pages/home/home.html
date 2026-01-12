@@ -5,62 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accueil Digiforma</title>
     <link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400,300&display=swap" rel="stylesheet">
-
-    <style>
-
-        :root {
-            --space-4: 24px;
-            --surface-gradient: linear-gradient(to bottom, #f8f9fa, #e9ecef);
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Satoshi', sans-serif;
-            background-color: #ffffff;
-            color: #212529;
-        }
-    
-
-        .V2_LeftMenuLayout {
-    position: relative;
-    height: 100dvh;
-    display: grid;
-    grid-template-rows: auto 1fr;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-.V2_LeftMenuLayout__body {
-    display: flex;
-    justify-content: center;
-    gap: var(--space-4);
-    height: 100%;
-    overflow: auto;
-    padding: var(--space-4);
-    background: var(--surface-gradient);
-    isolation: isolate;
-}
-    </style>
+    <link rel="stylesheet" href="../../components/molecular/header/header.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <div id="root">
         
-    <div class="V2_LeftMenuLayout">
-        <div class="V2_LeftMenuLayout__body">
+        <div class="V2_LeftMenuLayout">
+            <header id="header"></header>
+            <div class="V2_LeftMenuLayout__body">
 
+            </div>
         </div>
     </div>
-    </div>
     <script type="module">
+        import { renderHeader, initHeader } from '../../components/molecular/header/header.js';
         import homeMenu from '../../components/molecular/homeMenu/homeMenu.js';
-
+        document.getElementById('header').innerHTML = renderHeader();
+        initHeader();
         document.querySelector(".V2_LeftMenuLayout__body").innerHTML = homeMenu();
     </script>
 </body>
