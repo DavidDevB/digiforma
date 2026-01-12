@@ -6,7 +6,9 @@
     <title>Accueil Digiforma</title>
     <link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400,300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../components/molecular/header/header.css">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../../components/molecular/homeMenu/homeMenu.css">
+    <link rel="stylesheet" href="../../components/molecular/homeTitle/homeTitle.css">
+    <link rel="stylesheet" href="./home.css">
 </head>
 <body>
     <div id="root">
@@ -21,9 +23,11 @@
     <script type="module">
         import { renderHeader, initHeader } from '../../components/molecular/header/header.js';
         import homeMenu from '../../components/molecular/homeMenu/homeMenu.js';
+        import homeTitle from '../../components/molecular/homeTitle/homeTitle.js';
         document.getElementById('header').innerHTML = renderHeader();
         initHeader();
         document.querySelector(".V2_LeftMenuLayout__body").innerHTML = homeMenu();
+        document.querySelector(".V2_LeftMenuLayout__body").insertAdjacentHTML('afterend', homeTitle());
     </script>
 </body>
 </html>
