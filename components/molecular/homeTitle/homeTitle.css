@@ -1,0 +1,30 @@
+.home-title {
+    font-family: 'Satoshi', sans-serif;
+    text-align: center;
+    width: 50%;
+    font-size: 1.5em;
+    position: relative; /* Important ! */
+    padding: 20px; /* Pour espacer le contenu */
+    min-height: 200px; /* Ajustez selon vos besoins */
+}
+
+.home-title::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("https://cdn.filestackcontent.com/6BuKGScCRy2Cb9VXfQwx");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3; /* Ajustez l'opacité (0.1 à 1) */
+    z-index: -1;
+    border-radius: 15px; 
+    height: 350px; /* Pour arrondir les coins si nécessaire */
+}
+
+.home-title h1 {
+    position: relative; /* Pour garder le texte au-dessus */
+    z-index: 1;
+}

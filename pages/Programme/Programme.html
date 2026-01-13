@@ -4,11 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../components/molecular/header/header.css">
+    <link rel="stylesheet" href="../../components/molecular/homeMenu/homeMenu.css">
+    <link rel="stylesheet" href="../../components/molecular/homeTitle/homeTitle.css">
+    <link rel="stylesheet" href="../home/home.css">
+
     <link rel="stylesheet" href="./style.css">
     <title>Document</title>
 </head>
 
 <body>
+    <header id="header"></header>
     <nav>
         <ol>
             <li>PREPA CDA PYTHON-JAVA</li>-
@@ -19,8 +25,9 @@
     <p>Formation mixte</p>
     <p>Ce programme permet d’acquérir les bases préparatoires nécessaires en vue d’intégrer le parcours de formation
         certifiant Concepteur et Développeur d’Applications Python-Java</p>
-
-    <div class="ProgramPage__grid">
+        
+        <div class="ProgramPage__grid">
+            <div class="V2_LeftMenuLayout__body"></div>
 
         <div class="ProgrammeLeft">
             <div class="ProgramDuration">
@@ -352,6 +359,17 @@
         document.getElementById("notepad").innerHTML = IconCircle("notepad");
         document.getElementById("users").innerHTML = IconCircle("users");
         document.getElementById("info").innerHTML = IconCircle("info");
+
+
+        import homeMenu from '../../components/molecular/homeMenu/homeMenu.js';
+        import homeTitle from '../../components/molecular/homeTitle/homeTitle.js';
+        import { renderHeader, initHeader } from '../../components/molecular/header/header.js';
+        document.getElementById('header').innerHTML = renderHeader();
+        initHeader();
+
+        const body = document.querySelector(".V2_LeftMenuLayout__body");
+        body.innerHTML = homeMenu();
+
     </script>
 
 

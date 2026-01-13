@@ -92,7 +92,7 @@ h1 + p + p{
 
 .ProgramPage__grid {
     display: grid;
-    grid-template-columns: 2fr 2fr;
+    grid-template-columns: 1fr 1fr 3fr;
     gap: 20px;
     margin: 16px 0px;
     /* background-color: aqua; */
