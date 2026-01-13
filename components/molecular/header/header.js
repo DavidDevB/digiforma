@@ -1,9 +1,20 @@
+
+
+import { ClickableLogo } from "../../atomic/logo/clickableLogo.js";
+
 export function renderHeader() {
   return `
     <header class="header">
       <div class="header__container">
-        <div class="header__icon">Mon Logo</div>
-
+       <div class="header__icon">
+          ${ClickableLogo({
+            href: "/",
+            src: "../../../assets/logoFms.png",
+            alt: "FMS Academy",
+            width: 65,
+            newTab: false
+          })}
+        </div>
         <div class="header__profile">
           <button class="header__profile-btn" type="button">?</button>
 
@@ -30,6 +41,8 @@ export function renderHeader() {
     </header>
   `;
 }
+
+
 
 export function initHeader() {
   const modal = document.getElementById("profileModal");
