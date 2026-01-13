@@ -6,6 +6,30 @@ body{
   background: #ffffff;
 }
 
+/* ===== Layout global app ===== */
+.AppLayout{
+  display: grid;
+  grid-template-columns: 260px 1fr; /* largeur menu + contenu */
+  min-height: 100vh;
+}
+
+/* Sidebar menu */
+.AppLayout__sidebar{
+  background: #f8fafc;
+  border-right: 1px solid #e5e7eb;
+  padding: 16px 12px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: auto;
+}
+
+/* Contenu */
+.AppLayout__content{
+  padding: 0 24px 48px;
+  background: #ffffff;
+}
+
 /* ===== Breadcrumb (nav > ol) ===== */
 nav{
   padding: 14px 24px 0;
@@ -92,8 +116,8 @@ h1 + p + p{
 
 .ProgramPage__grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 3fr;
-    gap: 20px;
+    grid-template-columns: 420px 3fr;
+    gap: 24px;
     margin: 16px 0px;
     /* background-color: aqua; */
 }
