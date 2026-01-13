@@ -6,7 +6,7 @@ const icons = {
     home: "home",
     dots: "three--dots--vertical",
     follow: "users",
-    program: "clipboard--list",
+    program: "notepad",
     check: "sign",
     evaluation: "star",
     document: "folder",
