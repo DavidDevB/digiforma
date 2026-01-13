@@ -15,8 +15,18 @@ export const renderELearningCards = async () => {
   const root = document.getElementById("elearning-root");
   const data = await loadSequences();
 
+  const totalProgress = data.sequences.reduce(
+    (sum, sequence) => sum + sequence.progress,
+    0
+  );
+
+  const globalProgress = Math.round(
+    totalProgress / data.sequences.length
+  );
+
+
   root.innerHTML = `
-    ${Stats({ globalProgress: data.globalProgress, totalSequences: data.sequences.length })}
+    ${Stats({ globalProgress: globalProgress, totalSequences: data.sequences.length })}
     <ul class="ModulesPageLayout__modules-scroller">
       ${data.sequences.map(SequenceCard).join("")}
     </ul>

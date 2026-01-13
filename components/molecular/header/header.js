@@ -37,7 +37,7 @@ export function renderHeader() {
             aria-haspopup="true"
             aria-expanded="false"
           >
-            <span>RABORD Marty</span>
+            <span>MYSDF Merignac</span>
             <span aria-hidden="true">▾</span>
           </button>
 
