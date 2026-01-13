@@ -1,5 +1,5 @@
 .rootpage_item{
-    width: 300px;
+    width: 280px;
     font-family: 'Satoshi', sans-serif;
     background-color: #fff;
     border: 1px solid rgb(0, 0, 0, 0.1);
@@ -27,6 +27,9 @@
     padding: 1rem;
     color: black;
     margin: auto;
+    margin-block-end: 1em;
+    text-align: center;
+
 }
 
 .rootpage_item_title{
@@ -37,11 +40,5 @@
 }
 
 .rootpage_item_date{
-    text-align: center;
-}
-
-p{
-    margin-block-start: 1em;
-    margin-block-end: 1em;
     text-align: center;
 }

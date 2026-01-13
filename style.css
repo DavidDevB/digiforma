@@ -1,3 +1,9 @@
+html {
+    font-family: satoshi, sans-serif !important;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: satoshi, sans-serif;
     margin: 0;
