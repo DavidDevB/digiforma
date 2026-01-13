@@ -23,8 +23,10 @@ export const IconCircle = (iconName, options = {}) => {
         aria-hidden="true"
         style="width:${iconSize}px; height:${iconSize}px; color:${color};"
       >
-        <use href="./assets/icons.svg#${iconName}"></use>
+        <use href="/assets/icons.svg#${iconName}"></use>
       </svg>
     </div>
   `;
 }
+
+export default IconCircle;
