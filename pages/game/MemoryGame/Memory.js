@@ -24,7 +24,7 @@ const game = {
     startBtn.textContent = "Game in progress...";
     this.start();
   },
-
+ // Démarre une nouvelle partie
   start() {
     this.score = 0;
     this.level = 1;
@@ -35,7 +35,7 @@ const game = {
     this.updateUI();
     this.playRound();
   },
-
+  // Lance un nouveau round
   playRound() {
     this.sequence = Array.from({ length: this.level }, () => this.generateKey());
     this.userInput = [];
@@ -43,6 +43,7 @@ const game = {
     this.showSequence();
   },
 
+  // Affiche la séquence au joueur
   showSequence() {
     const display = document.getElementById("sequenceDisplay");
     let index = 0;
@@ -64,7 +65,7 @@ const game = {
       }
     }, 800);
   },
-
+ // Gère la saisie utilisateur
   handleKeyPress(key) {
     // Ignore si pas démarré / pas ton tour / touche pas valable
     if (!gameStarted || !this.canPlay || !this.keys.includes(key)) return;
