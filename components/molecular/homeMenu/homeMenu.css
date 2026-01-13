@@ -3,7 +3,7 @@
     width: var(--sidebar-width);
     font-family: 'Satoshi', sans-serif;
     font-weight: 500;
-    font-size: var(--font-size-2);
+    font-size: 20px;
     color: var(--colors-grey-900);
 }
 
