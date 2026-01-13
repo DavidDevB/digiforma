@@ -1,5 +1,5 @@
 .V2_LeftMenuLayout__nav {
-    display: block;
+    display: inline-flex;
     width: var(--sidebar-width);
     font-family: 'Satoshi', sans-serif;
     font-weight: 500;
