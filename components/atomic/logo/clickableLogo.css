@@ -1,0 +1,26 @@
+.clickable-logo {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.clickable-logo__image {
+    display: block;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+/* hover */
+.clickable-logo:hover .clickable-logo__image {
+    opacity: 0.9;
+}
+
+/* active */
+.clickable-logo:active .clickable-logo__image {
+    transform: scale(0.97);
+}
+
+/* focus keyboard */
+.clickable-logo:focus-visible {
+    outline: 2px solid rgb(166, 77, 144);
+    outline-offset: 4px;
+}
