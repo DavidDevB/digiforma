@@ -1,0 +1,1 @@
+<div class="RootPage__ts-list-icon"><svg aria-hidden="true" class="icon" name="student--hat"><use href="/assets/icons-CcgYjDsy.svg#student--hat"></use></svg></div>
