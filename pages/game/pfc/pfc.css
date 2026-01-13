@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.pfc-page{
+  background: rgb(251 251 255);
+  padding: 24px;
+  display:flex;
+  justify-content:center;
+  height: 100vh;
+}
+
+.pfc-card{
+  width: min(760px, 100%);
+  background:#fff;
+  border:1px solid #e8e8ee;
+  border-radius:16px;
+  box-shadow: 0 10px 26px rgba(0,0,0,.06);
+  padding: 18px;
+}
+
+.pfc-head h1{
+  margin: 0 0 6px 0;
+  font-size: 22px;
+}
+.pfc-sub{
+  margin:0;
+  color:#5c5c66;
+  font-size: 14px;
+}
+
+.pfc-score{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:10px;
+  margin:16px 0;
+}
+.scorebox{
+  border:1px solid #efeff6;
+  border-radius:12px;
+  padding: 10px;
+  background:#fafafe;
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  align-items:center;
+}
+.scorebox .label{
+  font-size: 25px;
+  color:#666;
+}
+.scorebox .value{
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.match-info{
+  margin: 0 0 12px 0;
+  color:#5c5c66;
+  font-size: 13px;
+}
+
+.pfc-btn:disabled{
+  opacity: .55;
+  cursor: not-allowed;
+}
+
+
+.pfc-arena{
+  display:grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items:center;
+  gap:12px;
+  padding: 14px;
+  border:1px dashed #e6e6ef;
+  border-radius:12px;
+  background:#fcfcff;
+}
+.pick-label{
+  text-align: center;
+  font-size: 25px;
+  color:#666;
+  margin-bottom: 6px;
+}
+.pick-value{
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+}
+.vs{
+  font-weight: 800;
+  color:#777;
+}
+
+.pfc-actions{
+  display:flex;
+  gap:10px;
+  margin: 14px 0 6px;
+  flex-wrap: wrap;
+}
+.pfc-btn{
+  flex: 1 1 160px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border:1px solid #e6e6ef;
+  background: #b2539a;
+  color: white;
+  cursor:pointer;
+  font-weight: 800;
+}
+.pfc-btn:hover{
+  background:#f5f5ff;
+  color: #b2539a;
+}
+
+.pfc-footer{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  margin-top: 10px;
+}
+.result{
+  margin-top: 50px;
+  color:#2d2d35;
+  font-size: 20px;
+}
+.reset{
+    border: 1px solid #c3c3d5;
+    background:#f5f5ff;
+    color: #b2539a;
+    padding: 10px 12px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+.reset:hover{
+  background: #b2539a;
+  color: white;
+
+}
