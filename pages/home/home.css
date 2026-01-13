@@ -1,5 +1,6 @@
 .V2_LeftMenuLayout__body {
     display: flex;
     flex-direction: row;
-    border: red 2px solid;
+    margin-top: 20px;
+    
 }
