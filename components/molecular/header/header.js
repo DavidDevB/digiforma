@@ -3,7 +3,6 @@ import { IconCircle } from "../../molecular/icon/iconCircle.js";
 
 /* =========================
    RENDER
-========================= */
 export function renderHeader() {
   return `
     <header class="header">
@@ -60,7 +59,6 @@ export function renderHeader() {
 
 /* =========================
    INIT
-========================= */
 export function initHeader() {
   const modal = document.getElementById("profileModal");
   const openBtn = document.getElementById("openProfileModal");
