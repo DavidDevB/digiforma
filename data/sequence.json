@@ -1,0 +1,22 @@
+{
+    "globalProgress": 100,
+    "totalSequences": 6,
+    "sequences": [
+        {
+            "id": "2299780",
+            "title": "ANG-BUSI-002 Business Essentials",
+            "coverUrl": "https://cdn.filestackcontent.com/o0GhA8GoS76RgeHdcaBo",
+            "progress": 100,
+            "href": "/ts/2514176/module/2299780",
+            "isFinished": true
+        },
+        {
+            "id": "2305350",
+            "title": "ANG-CDA Python-Java",
+            "coverUrl": "https://cdn.filestackcontent.com/vEsbl2gDRq27kMLgQMmq",
+            "progress": 100,
+            "href": "/ts/2514176/module/2305350",
+            "isFinished": true
+        }
+    ]
+}
