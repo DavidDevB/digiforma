@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../../components/molecular/header/header.css">
+    <link rel="stylesheet" href="../../components/molecular/homeMenu/homeMenu.css">
+    <link rel="stylesheet" href="../../components/molecular/homeTitle/homeTitle.css">
+    <link rel="stylesheet" href="../home/home.css">
+
+    <link rel="stylesheet" href="./style.css">
+    <title>Séquences e-learning</title>
+    <link rel="stylesheet" href="./eLearning.css" />
+</head>
+
+<body>
+    <header id="header"></header>
+    <section class="AppLayout" style="display:flex">
+        <aside class="AppLayout_sidebar">
+            <div class="V2_LeftMenuLayout__body"></div>
+        </aside>
+        <main class="ModulesPageLayout">
+            <h1 class="ModulesPageLayout__title">Séquences e-learning</h1>
+            <div id="elearning-root"></div>
+        </main>
+    </section>
+    <script type="module">
+        import { renderELearningCards } from "./eLearning.js"
+        import homeMenu from '../../components/molecular/homeMenu/homeMenu.js';
+        import homeTitle from '../../components/molecular/homeTitle/homeTitle.js';
+        import { renderHeader, initHeader } from '../../components/molecular/header/header.js';
+        renderELearningCards()
+
+        document.getElementById('header').innerHTML = renderHeader();
+        initHeader();
+
+        const body = document.querySelector(".V2_LeftMenuLayout__body");
+        body.innerHTML = homeMenu();
+
+    </script>
+</body>
+
+</html>

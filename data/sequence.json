@@ -1,0 +1,22 @@
+{
+    "globalProgress": 75,
+    "totalSequences": 6,
+    "sequences": [
+        {
+            "id": "1",
+            "title": "Memory by Marty",
+            "coverUrl": "/assets/memory.png",
+            "progress": 100,
+            "href": "/pages/game/MemoryGame/memory.html",
+            "isFinished": true
+        },
+        {
+            "id": "2",
+            "title": "Snake by ML",
+            "coverUrl": "/assets/snake.png",
+            "progress": 50,
+            "href": "/pages/game/MLGame/mlGame.html",
+            "isFinished": false
+        }
+    ]
+}

@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+main {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+}
+
+#gameInfo {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+    font-size: 1.2em;
+    color: #555;
+}
+
+
+.key-button {
+    padding: 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background: #667eea;
+    color: white;
+    transition: all 0.2s ease;
+}
+
+.key-button:hover {
+    background: #764ba2;
+    transform: scale(1.05);
+}
+
+.key-button:active {
+    transform: scale(0.95);
+    background: #5568d3;
+}
+
+#message {
+    text-align: center;
+    font-size: 1.1em;
+    color: #667eea;
+    font-weight: bold;
+    padding: 20px;
+    background: #f0f0f0;
+    border-radius: 10px;
+}
+
+.key-button.active {
+    background-color: orange;
+    transform: scale(1.1);
+}
+
+#gameBoard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+#gameBoard button:nth-child(1) {
+    grid-column: 2;
+}
+
+#gameBoard button:nth-child(2) {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+#gameBoard button:nth-child(3) {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+#gameBoard button:nth-child(4) {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+#startBtn {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border: none;
+    border-radius: 12px;
+    background: #ff9800;
+    color: white;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.2s ease;
+}
+
+#startBtn:hover {
+    background: #e68900;
+    transform: scale(1.03);
+}
+
+#startBtn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
+#startBtn {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border: none;
+    border-radius: 12px;
+    background: #ff9800;
+    color: white;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.2s ease;
+}
+
+#startBtn:hover {
+    background: #e68900;
+    transform: scale(1.03);
+}
+
+#startBtn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}

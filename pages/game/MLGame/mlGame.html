@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./mlGame.css" />
+    <title>Snake</title>
+</head>
+
+<body>
+    <div style="display:flex; position:absolute; top:0; left:0">
+        <div id="return"></div>
+    </div>
+    <main>
+        <h1>🐍 Snake</h1>
+
+        <div id="gameInfo">
+            <p>Score: <span id="score">0</span></p>
+            <p><span id="status">Joue avec les flèches</span></p>
+        </div>
+
+        <canvas id="game" width="400" height="400"></canvas>
+
+        <button id="restart">▶ Recommencer</button>
+    </main>
+    <script type="module">
+        import IconSquare from "../../../components/molecular/icon/iconSquare.js"
+        document.getElementById("return").innerHTML = `<div style="margin:20px"><a href="/pages/eLearning/eLearning.html">${IconSquare("arrow--left")}</a></div>`
+
+    </script>
+    <script src="./mlGame.js"></script>
+</body>
+
+</html>
