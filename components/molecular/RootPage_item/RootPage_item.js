@@ -8,7 +8,7 @@ export function RootPage_item(title, startDate, endDate, url) {
             <div class="rootpage_item_body">
                     <p class="rootpage_item_title">${title}</p>
                     <p class="rootpage_item_date">Du ${startDate} au ${endDate}</p>
-                    <div> ${Button ("Continuer")} </div>
+                    <div> ${Button ("Continuer", "../../../pages/home/home.html")} </div>
             </div>
         </section>
     `;

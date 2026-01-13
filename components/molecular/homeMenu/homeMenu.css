@@ -3,7 +3,7 @@
     width: var(--sidebar-width);
     font-family: 'Satoshi', sans-serif;
     font-weight: 500;
-    font-size: var(--font-size-2);
+    font-size: 20px;
     color: var(--colors-grey-900);
 }
 
@@ -27,6 +27,9 @@
 }
 
 .SidebarNavigationContent__navigation {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
     cursor: pointer;
     padding: var(--space-2) var(--space-3);
     border-radius: var(--border-radius-1);

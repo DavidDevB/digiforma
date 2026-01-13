@@ -1,6 +1,7 @@
 import { IconCircle } from "../../components/molecular/icon/iconCircle.js"
 import { RootPage_item } from "../../components/molecular/RootPage_item/RootPage_item.js"
 
+
 export function RootPage() {
     return `
         <body>
