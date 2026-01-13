@@ -1,0 +1,81 @@
+.nim-game {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #fdfdfd;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    margin: 30px auto;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.current-player {
+    color: #b2539a;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.rows {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #eef0f5;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.row-label {
+    width: 80px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.hidden {
+    display: none;
+}
+
+.sticks {
+    text-align: left;
+    font-size: 20px;
+}
+
+.stick {
+  display: inline-block;
+  width: 10px;
+  height: 40px;
+  background: #b2539a;
+  margin-right:10px;
+  border-radius: 2px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.controls input[type="number"] {
+    width: 60px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.controls button {
+    padding: 6px 12px;
+    background: #b2539a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
