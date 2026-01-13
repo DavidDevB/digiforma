@@ -1,0 +1,42 @@
+.burger-button {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    border: none;
+    background: transparent;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    transition:
+        background-color 0.15s ease,
+        transform 0.1s ease;
+}
+
+/* icon color */
+.burger-button .icon {
+    fill: rgb(20, 18, 19);
+}
+
+/* hover */
+.burger-button:hover {
+    background-color: rgba(146, 133, 142, 0.12);
+}
+
+/* active */
+.burger-button:active {
+    transform: scale(0.95);
+    background-color: grey;
+}
+
+/* focus keyboard */
+.burger-button:focus-visible {
+    outline: 2px solid rgb(166, 77, 144);
+    outline-offset: 2px;
+}
+
+/* open */
+.burger-button.is-open {
+    background-color: rgba(235, 239, 243 0.18);
+}

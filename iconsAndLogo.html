@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>
+        ICONS
+    </title>
+    <style>
+        .icon {
+            width: 30px;
+            height: 30px;
+            fill: currentColor;
+        }
+    </style>
+    <link rel="stylesheet" href="./components/atomic/burgerMenu/burgerButton.css" />
+    <link rel="stylesheet" href="./components/atomic/logo/clickableLogo.css" />
+
+</head>
+
+<body>
+
+
+    <h1>Logo clickable</h1>
+    <div id="logo" style="display:flex; gap:20px; flex-direction:column"></div>
+    <h1>Burger button</h1>
+    <div id="burger" style="display:flex; gap:20px; flex-direction:column"></div>
+    <h1>Icons</h1>
+    <div id="icons" style="display:flex; gap:20px; flex-direction:column"></div>
+
+    <script type="module">
+        import { IconCircle } from "./components/molecular/icon/iconCircle.js";
+        import { IconSquare } from "./components/molecular/icon/iconSquare.js";
+        import { BurgerButton } from "./components/atomic/burgerMenu/burgerButton.js";
+        import { ClickableLogo } from "./components/atomic/logo/clickableLogo.js";
+
+
+
+        const icons = [
+            "student--hat",
+            "student",
+            "burger--menu",
+            "calendar",
+            "calendar--blank",
+            "star",
+            "folder",
+            "three--dots--vertical",
+            "sign",
+            "download",
+            "user",
+            "location",
+            "question",
+            "users",
+            "award--alt",
+            "notepad",
+            "info",
+            "checkmark--circle",
+            "arrow--left",
+            "arrow--right",
+            "arrow--up",
+            "arrow--down",
+
+        ];
+
+
+        document.getElementById("logo").innerHTML = `<div style="margin-bottom:16px;">
+              ${ClickableLogo({
+            href: "https://fms-ea.com/",
+            about: "blank",
+            src: "assets/logoFms.png",
+            alt: "Logo Facilities Multi Services",
+            width: 70,
+        })}
+            </div>`
+        document.getElementById("burger").innerHTML = `<div style="margin-bottom:16px;">
+                ${BurgerButton()}
+            </div>`
+        document.getElementById("icons").innerHTML =
+
+
+            icons
+                .map(
+                    (name) => `
+        <div class="icon-item" style="display:flex; flex-direction:column;gap:8px;">
+          ${IconCircle(name)}
+        ${IconSquare(name)}
+          <span class="icon-label">${name}</span>
+        </div>
+      `
+                )
+                .join("");
+        const burgerButton = document.querySelector(".burger-button");
+
+        burgerButton.addEventListener("click", () => {
+            const isOpen = burgerButton.classList.toggle("is-open");
+
+
+            console.log("Burger menu clicked, open =", isOpen);
+        });
+    </script>
+
+</body>
+
+</html>
