@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pierre-Feuille-Ciseaux</title>
+
+  <!-- Styles du jeu -->
+  <link rel="stylesheet" href="./pfc.css" />
+
+  <!-- header/menu Digiforma -->
+  <link rel="stylesheet" href="../../../components/molecular/header/header.css" />
+</head>
+
+<body>
+  <!-- header/menu Digiforma -->
+  <header id="header"></header>
+
+  <main class="pfc-page">
+    <section class="pfc-card" aria-labelledby="pfcTitle">
+      <div class="pfc-head">
+        <h1 id="pfcTitle">Pierre – Feuille – Ciseaux</h1>
+        <p class="pfc-sub">Choisis un coup. Le bot joue aléatoirement.</p>
+      </div>
+
+      <div class="pfc-score">
+        <div class="scorebox">
+          <span class="label">Moi</span>
+          <span id="scorePlayer" class="value">0</span>
+        </div>
+        <div class="scorebox">
+          <span class="label">Égalités</span>
+          <span id="scoreDraw" class="value">0</span>
+        </div>
+        <div class="scorebox">
+          <span class="label">Bot</span>
+          <span id="scoreBot" class="value">0</span>
+        </div>
+      </div>
+
+      <p id="matchInfo" class="match-info">Objectif : 3 victoires (Best-of-5).</p>
+
+      <div class="pfc-arena" role="status" aria-live="polite">
+        <div class="pick">
+          <div class="pick-label">Mon choix</div>
+          <div id="playerPick" class="pick-value">—</div>
+        </div>
+        <div class="vs">VS</div>
+        <div class="pick">
+          <div class="pick-label">Choix du bot</div>
+          <div id="botPick" class="pick-value">—</div>
+        </div>
+      </div>
+
+      <div id="roundResult" class="result">Fais ton choix pour commencer.</div>
+      <div class="pfc-actions" aria-label="Choisir un coup">
+        <button class="pfc-btn" data-choice="pierre" type="button">Pierre ✊🏻​</button>
+        <button class="pfc-btn" data-choice="feuille" type="button">Feuille ​​🖐️​​</button>
+        <button class="pfc-btn" data-choice="ciseaux" type="button">Ciseaux ​✌🏼​</button>
+      </div>
+
+      <div class="pfc-footer">
+        
+        <button id="resetBtn" class="reset" type="button">Réinitialiser</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- scripts Digiforma -->
+  <script type="module">
+    import { renderHeader, initHeader } from '../../../components/molecular/header/header.js';
+
+        document.getElementById('header').innerHTML = renderHeader();
+        initHeader();
+
+  </script>
+
+  <!-- Script du jeu -->
+  <script src="./pfc.js" defer></script>
+</body>
+</html>
