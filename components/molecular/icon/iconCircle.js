@@ -28,3 +28,5 @@ export const IconCircle = (iconName, options = {}) => {
     </div>
   `;
 }
+
+export default IconCircle;

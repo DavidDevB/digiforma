@@ -35,3 +35,5 @@ export const IconSquare = (iconName, options = {}) => {
     </div>
   `;
 };
+
+export default IconSquare;
