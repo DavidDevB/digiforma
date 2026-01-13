@@ -1,12 +1,35 @@
+import { ClickableLogo } from "../../atomic/logo/clickableLogo.js";
+import { IconCircle } from "../../molecular/icon/iconCircle.js";
+
 export function renderHeader() {
   return `
     <header class="header">
       <div class="header__container">
-        <div class="header__icon">Mon Logo</div>
 
+        <!-- LOGO -->
+        <div class="header__icon">
+          ${ClickableLogo({
+    href: "/",
+    src: "../../../assets/logoFms.png",
+    alt: "FMS Academy",
+    width: 65,
+    newTab: false
+  })}
+        </div>
+
+        <!-- PROFIL -->
         <div class="header__profile">
-          <button class="header__profile-btn" type="button">?</button>
 
+          <!-- Bouton question -->
+          <button
+            class="header__profile-btn"
+            type="button"
+            aria-label="Aide"
+          >
+            <span id="header-question-icon"></span>
+          </button>
+
+          <!-- Bouton profil -->
           <button
             class="header__profile-name"
             type="button"
@@ -14,28 +37,36 @@ export function renderHeader() {
             aria-haspopup="true"
             aria-expanded="false"
           >
-          <span>RABORD Marty </span>
+            <span>RABORD Marty</span>
             <span aria-hidden="true">▾</span>
           </button>
 
-          <!-- Dropdown sous Profil -->
+          <!-- Dropdown -->
           <div class="modal" id="profileModal" aria-hidden="true">
-            <div class="modal__content" role="menu" aria-label="Menu profil">
+            <div class="modal__content" role="menu">
               <a href="#" class="modal__link" role="menuitem">Paramètres</a>
               <a href="#" class="modal__link" role="menuitem">Déconnexion</a>
             </div>
           </div>
+
         </div>
       </div>
     </header>
   `;
 }
 
+
 export function initHeader() {
   const modal = document.getElementById("profileModal");
   const openBtn = document.getElementById("openProfileModal");
+  const questionIcon = document.getElementById("header-question-icon");
 
   if (!modal || !openBtn) return;
+
+  /* Injecte l’icône question */
+  if (questionIcon) {
+    questionIcon.innerHTML = IconCircle("question");
+  }
 
   const open = () => {
     modal.classList.add("active");
@@ -50,29 +81,22 @@ export function initHeader() {
   };
 
   const toggle = () => {
-    if (modal.classList.contains("active")) close();
-    else open();
+    modal.classList.contains("active") ? close() : open();
   };
 
-  // Ouvre/ferme au clic sur Profil
+  /* Events */
   openBtn.addEventListener("click", (e) => {
-    e.stopPropagation(); // sinon: open puis close immédiat via document.click
+    e.stopPropagation();
     toggle();
   });
 
-  // Empêche le clic dans le menu de fermer (optionnel mais pratique)
   modal.addEventListener("click", (e) => {
     e.stopPropagation();
   });
 
-  // Ferme au clic ailleurs
   document.addEventListener("click", close);
 
-  // Ferme avec ESC
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") close();
   });
 }
-
-
-

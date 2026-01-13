@@ -1,0 +1,54 @@
+{
+    "globalProgress": 100,
+    "totalSequences": 6,
+    "sequences": [
+        {
+            "id": "2299780",
+            "title": "ANG-BUSI-002 Business Essentials",
+            "coverUrl": "https://cdn.filestackcontent.com/o0GhA8GoS76RgeHdcaBo",
+            "progress": 100,
+            "href": "/ts/2514176/module/2299780",
+            "isFinished": true
+        },
+        {
+            "id": "2305350",
+            "title": "ANG-CDA Python-Java",
+            "coverUrl": "https://cdn.filestackcontent.com/vEsbl2gDRq27kMLgQMmq",
+            "progress": 100,
+            "href": "/ts/2514176/module/2305350",
+            "isFinished": true
+        },
+        {
+            "id": "2305356",
+            "title": "ANG-PROB-002 Résolution de Problématiques",
+            "coverUrl": "https://cdn.filestackcontent.com/rxxNoF2TMUe6xWEkj7Vw",
+            "progress": 100,
+            "href": "/ts/2514176/module/2305356",
+            "isFinished": true
+        },
+        {
+            "id": "2315161",
+            "title": "ANG-EMAI-002 Emails: Comprendre et rédiger",
+            "coverUrl": "https://cdn.filestackcontent.com/lmeWJIbeTBWKoI8mH5bd",
+            "progress": 100,
+            "href": "/ts/2514176/module/2315161",
+            "isFinished": true
+        },
+        {
+            "id": "2315162",
+            "title": "ANG-CONV-002 Pratique de la conversation professionnelle",
+            "coverUrl": "https://cdn.filestackcontent.com/SEfCo9pqQ5W9Xk1YRu5G",
+            "progress": 100,
+            "href": "/ts/2514176/module/2315162",
+            "isFinished": true
+        },
+        {
+            "id": "2369686",
+            "title": "ANG-REUN-002 Réunions",
+            "coverUrl": "https://cdn.filestackcontent.com/4ld5grwSToSV2xzuj0vs",
+            "progress": 100,
+            "href": "/ts/2514176/module/2369686",
+            "isFinished": true
+        }
+    ]
+}

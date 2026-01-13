@@ -1,12 +1,12 @@
 export const IconCircle = (iconName, options = {}) => {
-    const {
-        size = 44,
-        iconSize = 30,
-        bgColor = "rgb(166, 77, 144)",
-        color = "white",
-    } = options;
+  const {
+    size = 44,
+    iconSize = 30,
+    bgColor = "rgb(166, 77, 144)",
+    color = "white",
+  } = options;
 
-    return `
+  return `
     <div
       style="
         background-color:${bgColor};
