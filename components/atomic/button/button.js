@@ -14,7 +14,7 @@ const button = (title) => {
 }
   </style>`;
 
-    return (`<div class="Widget__action">
+    return (`<div class="Widget__action" >
                 <a class="Button Button--size-sm Button--variant-solid Button--color-primary Button--text-only" href="">
                     ${title}
                 </a>
