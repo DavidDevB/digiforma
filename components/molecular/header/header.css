@@ -1,11 +1,12 @@
 .header {
-  background-color: #f5f5f5;
-  padding: 1rem;
+  background-color: #fff;
+  padding: 0.5rem   0.75rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Collé aux extrémités */
 .header__container {
+  /* height: 40px; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -26,7 +27,7 @@
   align-items: center;
 }
 
-.header__profile-btn,
+
 .header__profile-name {
     font-size: 16px;
     color: white;
@@ -38,9 +39,6 @@
  
 }
 
-.header__profile-btn {
-  font-size: 1.5rem;
-}
 
 /* Dropdown sous Profil */
 .modal {
@@ -75,4 +73,20 @@
 
 .modal__link:hover {
   background-color: #f5f5f5;
+}
+
+
+.header__profile-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__profile-btn svg {
+  width: 20px;
+  height: 20px;
 }
