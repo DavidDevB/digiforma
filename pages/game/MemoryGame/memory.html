@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="memory.css">
     <title>Document</title>
 </head>
+
 <body>
+    <div style="display:flex; position:absolute; top:0; left:0">
+        <div id="return"></div>
+    </div>
+
     <main>
+
         <h1>Memory Game</h1>
         <div id="gameInfo">
             <p>Level: <span id="level">1</span></p>
@@ -22,10 +29,16 @@
         <p id="sequenceDisplay">Sequence: -</p>
         <button id="startBtn">▶ Start Game</button>
 
+        <script type="module">
+            import IconSquare from "../../../components/molecular/icon/iconSquare.js"
+            document.getElementById("return").innerHTML = `<div style="margin:20px"><a href="/pages/eLearning/eLearning.html">${IconSquare("arrow--left")}</a></div>`
 
+        </script>
         <script src="Memory.js"></script>
+
 
 
     </main>
 </body>
+
 </html>
