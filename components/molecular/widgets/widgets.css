@@ -1,0 +1,64 @@
+
+:root{
+  --bg: #f6f6fb;
+  --stroke: #e8e8ee;
+  --radius: 14px;
+  --shadow: 0 6px 18px rgba(0,0,0,.06);
+}
+
+*{ box-sizing: border-box; }
+body{
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: #1f1f1f;
+}
+
+.app{
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 18px;
+  display: grid;
+  grid-template-columns: 260px 1fr 340px;
+  gap: 18px;
+  align-items: start;
+}
+
+/* colonnes */
+.left-col{ position: sticky; top: 12px; }
+.right-col{ position: sticky; top: 12px; }
+
+.main-card{
+  background: #fff;
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 18px;
+}
+
+/* FIX: empêcher les règles globales d’agrandir les SVG */
+#rightWidgets svg{
+  width: initial;
+  height: initial;
+}
+
+#rightWidgets .w-ico svg{
+  width: 18px !important;
+  height: 18px !important;
+  display: block;
+}
+
+#rightWidgets.right-col{
+  width: 340px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+#rightWidgets .w-card{
+  background: #fff;
+  border: 1px solid #e8e8ee;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.06);
+  padding: 14px;
+}
