@@ -1,4 +1,7 @@
-
+.body-style{
+        background: transparent linear-gradient(#ffffff, #f0f0ff);
+        overflow: auto;
+}
 
 .heading--level-1{
     font-size: 3rem;

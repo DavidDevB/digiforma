@@ -4,7 +4,7 @@ import { RootPage_item } from "../../components/molecular/RootPage_item/RootPage
 
 export function RootPage() {
     return `
-        <body>
+        <body class="body-style">
             <main class="CommonPagesLayout__content">
                 <h1 class="heading--level-1">Toutes mes sessions</h1>
                 <div class="RootPage__ts-list-header">
