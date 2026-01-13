@@ -10,6 +10,13 @@
     <link rel="stylesheet" href="../../components/molecular/homeTitle/homeTitle.css">
     <link rel="stylesheet" href="./home.css">
 </head>
+<style>
+    .icon {
+            width: 30px;
+            height: 30px;
+            fill: currentColor;
+        }
+</style>
 <body>
     <div id="root">
         
@@ -26,8 +33,9 @@
         import homeTitle from '../../components/molecular/homeTitle/homeTitle.js';
         document.getElementById('header').innerHTML = renderHeader();
         initHeader();
-        document.querySelector(".V2_LeftMenuLayout__body").innerHTML = homeMenu();
-        document.querySelector(".V2_LeftMenuLayout__body").insertAdjacentHTML('afterend', homeTitle());
+        const body = document.querySelector(".V2_LeftMenuLayout__body");
+        body.innerHTML = homeMenu();
+        body.insertAdjacentHTML('beforeend', homeTitle());
     </script>
 </body>
 </html>
