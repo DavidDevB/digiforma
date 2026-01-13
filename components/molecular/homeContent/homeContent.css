@@ -1,0 +1,35 @@
+
+
+.HomeContent {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+}
+
+.HomeContent h2 {
+    margin: 0;
+    font-size: 35px;
+    color: #333;
+}
+
+.HomeContent span {
+    font-size: 18px;
+    color: #000000;
+    font-weight: 500;
+}
+
+.HomeContent h5 {
+    font-weight: 450;
+    font-size: 40px;
+    color: #000000;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.HomeContent .section {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

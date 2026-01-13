@@ -17,9 +17,9 @@ Lieux de formation : 549 rue du Marais d'Orx - 40230 SAINT-GEOURS-DE-MAREMNE
                                  2 rue Louis Courtois de Vicose - 31100 TOULOUSE
 
                                  3 allée Pierre Gilles de Gennes - 33700 MERIGNAC</p>
-            <div></div>
-            <div></div>
-            <div></div>
+            <img src="../../../assets/plan1.png" alt="plan1"/>
+            <img src="../../../assets/plan2.png" alt="plan2"/>
+            <img src="../../../assets/plan3.png" alt="plan3"/>
             <h3>Déroulé de la formation</h3>
             <p>Nos salles de formation sont spécialement conçues pour répondre aux exigences du métier. Ces espaces peuvent accueillir jusqu'à 12 personnes et sont équipés de manière fonctionnelle pour vous permettre d'accomplir les taches de formation avec facilité et efficacité.
 
