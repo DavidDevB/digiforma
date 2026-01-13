@@ -1,8 +1,6 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const root = document.getElementById("rightWidgets");
-  if (!root) return;
 
-  root.innerHTML = `
+  const widgets = () => {
+    return(`
     <!-- Prochain créneau -->
     <section class="w-card">
       <div class="w-head">
@@ -128,7 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       </div>
     </section>
-  `;
+  `)};
 
   function elItem(code, name, pct){
     return `
@@ -154,4 +152,5 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
     `;
   }
-});
+
+  export default widgets;

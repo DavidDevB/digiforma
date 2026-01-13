@@ -9,4 +9,15 @@
 body {
     margin: 0;
     padding: 0;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.V2_LeftMenuLayout__content {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    padding: 20px;
+    width: 60%   
+
 }
