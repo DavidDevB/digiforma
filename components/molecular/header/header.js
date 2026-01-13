@@ -13,7 +13,7 @@ export function renderHeader() {
     src: "../../../assets/logoFms.png",
     alt: "FMS Academy",
     width: 65,
-    newTab: false,
+    newTab: false
   })}
         </div>
 

@@ -1,0 +1,212 @@
+html {
+    font-family: satoshi, sans-serif !important;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: satoshi, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--text);
+    background: #fff;
+}
+
+:root {
+    --primary: rgb(166, 77, 144);
+    --grey-300: rgb(235, 239, 243);
+    --grey-500: rgb(150, 152, 154);
+    --grey-400: rgb(247, 247, 247);
+    --text: rgb(17, 24, 39);
+    --radius: 14px;
+}
+
+
+.ModulesPageLayout {
+    padding: 24px;
+    max-width: 1100px;
+
+}
+
+.ModulesPageLayout__title {
+    margin: 0 0 16px 0;
+    font-size: 20px;
+}
+
+.ModulesPageLayout__stats {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 18px;
+    border: 1px solid var(--grey-300);
+    border-radius: var(--radius);
+    background: rgb(244, 237, 242);
+    width: fit-content;
+}
+
+/* ---- ProgressCircle ---- */
+.ProgressCircle {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 12px;
+    align-items: center;
+    padding: 12px 14px;
+    border-radius: var(--radius);
+}
+
+.ProgressCircle__circle {
+    width: 64px;
+    height: 64px;
+}
+
+.ProgressCircle__circle-track {
+    fill: none;
+    stroke: var(--grey-500);
+    stroke-width: 10;
+}
+
+.ProgressCircle__progress {
+    fill: none;
+    stroke: #22c55e;
+    /* success-ish */
+    stroke-width: 10;
+    stroke-linecap: round;
+}
+
+.ProgressCircle__subtitle {
+    margin: 0;
+    font-size: 12px;
+    opacity: 0.75;
+}
+
+.ProgressCircle__title {
+    margin: 2px 0 0 0;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+/* ---- Counts block ---- */
+.ModulesPageLayout__learning-path-counts {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0px 14px;
+    border-radius: var(--radius);
+    min-height: 90px;
+}
+
+.ModulesPageLayout__learning-path-counts-icon .SvgIcon {
+    width: 24px;
+    height: 24px;
+    fill: var(--primary);
+}
+
+.ModulesPageLayout__learning-path-counts-text small {
+    display: block;
+    font-size: 12px;
+    opacity: 0.75;
+}
+
+.ModulesPageLayout__learning-path-counts-text p {
+    margin: 2px 0 0 0;
+    font-weight: 700;
+}
+
+/* ---- Cards list ---- */
+.ModulesPageLayout__modules-scroller {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+/* ---- Card ---- */
+.ElearningSequenceWidget {
+    position: relative;
+    border: 1px solid var(--grey-300);
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: var(--grey-400);
+    min-width: 300px;
+
+}
+
+.ElearningSequenceWidget__cover {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+.ElearningSequenceWidget__title {
+    margin: 12px 14px 0 14px;
+    font-size: 16px;
+}
+
+.ElearningSequenceWidget__footer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 14px 14px 14px;
+    flex-direction: column;
+}
+
+.ElearningSequenceWidget__progress-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.ElearningSequenceWidget__progress-label {
+    font-size: 12px;
+    opacity: 0.8;
+    min-width: 44px;
+    text-align: right;
+}
+
+/* ---- ProgressBar ---- */
+.ProgressBar {
+    height: 8px;
+    background-color: var(--primary);
+    height: 5px;
+    border-radius: 16px;
+}
+
+/* ---- Button ---- */
+.Button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 8px 12px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.Button--variant-solid.Button--color-primary {
+    background: var(--primary);
+    color: white;
+}
+
+/* ---- Finished badge ---- */
+.ElearningSequenceWidget__finishedBadge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border-radius: 999px;
+    background: rgba(235, 239, 243, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ElearningSequenceWidget__finishedBadge .SvgIcon {
+    width: 20px;
+    height: 20px;
+    fill: var(--primary);
+}

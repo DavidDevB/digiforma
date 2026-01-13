@@ -1,15 +1,15 @@
 export const ClickableLogo = (options = {}) => {
-    const {
-        href = "/",
-        src,
-        alt = "Logo",
-        width = 65,
-        height = "auto",
-        className = "",
-        newTab = true,
-    } = options;
+  const {
+    href = "/",
+    src,
+    alt = "Logo",
+    width = 65,
+    height = "auto",
+    className = "",
+    newTab = true,
+  } = options;
 
-    return `
+  return `
     <a
       class="clickable-logo ${className}"
       href="${href}"
