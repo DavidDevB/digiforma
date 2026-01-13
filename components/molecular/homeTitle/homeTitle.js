@@ -1,7 +1,5 @@
 
 
-
-
 const homeTitle = () => {
 
     return (`<div class="home-title">
@@ -12,8 +10,4 @@ const homeTitle = () => {
 
 
 export default homeTitle;
-
-
-
-
 

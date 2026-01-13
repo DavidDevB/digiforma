@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Root</title>
+    <link rel="stylesheet" href="../../components/molecular/header/header.css">
+    <link rel="stylesheet" href="../../components/atomic/button/button.css">
+    <link rel="stylesheet" href="../../components/molecular/RootPage_item/RootPage_item.css">
+    <link rel="stylesheet" href="../../pages/RootPage/RootPage.css">
+
+</head>
+<body>
+    <div id="root">
+        <div class="V2_LeftMenuLayout">
+            <header id="header"></header>
+        </div>
+    </div>
+    <section id="RootPage" style="background-image: linear-gradient(rgb(255, 255, 255), rgb(240, 240, 255))"></section>
+
+    <script type="module">
+        import { renderHeader } from '../../components/molecular/header/header.js';
+        document.getElementById('header').innerHTML = renderHeader();
+
+        import { RootPage } from './RootPage.js'
+        document.getElementById('RootPage').innerHTML = RootPage();
+</script>
+</body>
+</html>
