@@ -1,8 +1,6 @@
 import { ClickableLogo } from "../../atomic/logo/clickableLogo.js";
 import { IconCircle } from "../../molecular/icon/iconCircle.js";
 
-/* =========================
-   RENDER
 export function renderHeader() {
   return `
     <header class="header">
@@ -11,17 +9,17 @@ export function renderHeader() {
         <!-- LOGO -->
         <div class="header__icon">
           ${ClickableLogo({
-            href: "/",
-            src: "../../../assets/logoFms.png",
-            alt: "FMS Academy",
-            width: 65,
-            newTab: false,
-          })}
+    href: "/",
+    src: "../../../assets/logoFms.png",
+    alt: "FMS Academy",
+    width: 65,
+    newTab: false,
+  })}
         </div>
 
         <!-- PROFIL -->
         <div class="header__profile">
-          
+
           <!-- Bouton question -->
           <button
             class="header__profile-btn"
@@ -57,8 +55,7 @@ export function renderHeader() {
   `;
 }
 
-/* =========================
-   INIT
+
 export function initHeader() {
   const modal = document.getElementById("profileModal");
   const openBtn = document.getElementById("openProfileModal");
