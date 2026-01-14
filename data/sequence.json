@@ -21,9 +21,9 @@
         {
             "id": "3",
             "title": "Nim by Amandine",
-            "coverUrl": "/assets/snake.png",
+            "coverUrl": "/assets/nim.png",
             "progress": 70,
-            "href": "/pages/game/MLGame/mlGame.html",
+            "href": "/pages/game/Agame/NimGame.html",
             "isFinished": false
         }
     ]
