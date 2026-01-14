@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Digiforma - Portail</title>
 
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="components/molecular/header/header.css" />
-    <link rel="stylesheet" href="components/molecular/menu/menu.css" />
-    <link rel="stylesheet" href="components/molecular/widgets/widgets.css" />
-    <link rel="stylesheet" href="components/molecular/header/header.css">
-    <link rel="stylesheet" href="components/molecular/homeMenu/homeMenu.css">
-    <link rel="stylesheet" href="components/molecular/homeTitle/homeTitle.css">
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./components/molecular/header/header.css" />
+    <link rel="stylesheet" href="./components/molecular/menu/menu.css" />
+    <link rel="stylesheet" href="./components/molecular/homeMenu/homeMenu.css" />
+    <link rel="stylesheet" href="./components/molecular/homeTitle/homeTitle.css" />
+    <link rel="stylesheet" href="./components/molecular/widgets/widgets.css" />
+    <link rel="stylesheet" href="/components/atomic/button/button.css" />
 </head>
 
 <body>
@@ -39,19 +39,23 @@
     </div>
 
     <script type="module">
+        import homeMenu from "./components/molecular/homeMenu/homeMenu.js";
+        import homeTitle from "./components/molecular/homeTitle/homeTitle.js";
+        import widgets from "./components/molecular/widgets/widgets.js";
+        import { renderHeader, initHeader } from "./components/molecular/header/header.js";
 
-
-        import homeMenu from '../../components/molecular/homeMenu/homeMenu.js';
-        import homeTitle from '../../components/molecular/homeTitle/homeTitle.js';
-        import { renderHeader, initHeader } from '../../components/molecular/header/header.js';
-        document.getElementById('header').innerHTML = renderHeader();
+        // Render header
+        document.getElementById("header").innerHTML = renderHeader();
         initHeader();
 
-        const body = document.querySelector(".V2_LeftMenuLayout__body");
-        body.innerHTML = homeMenu();
+        // Render left menu
+        document.querySelector(".V2_LeftMenuLayout__body").innerHTML = homeMenu();
 
+        // Render main title
+        document.getElementById("homeTitle").innerHTML = homeTitle();
+
+        document.getElementById("rightWidgets").innerHTML = widgets();
     </script>
-    <script src="components/molecular/widgets/widgets.js" defer></script>
 </body>
 
 </html>

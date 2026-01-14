@@ -6,7 +6,7 @@ const button = (title, href) => {
                 <a class="Button" href="${href}">
                     ${title}
                 </a>
-            </div>`); 
+            </div>`);
 };
 
 

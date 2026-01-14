@@ -1,6 +1,6 @@
 import { ProgressCircle } from "../../atomic/progress/progressCircle.js";
 import { IconCircle } from "../../molecular/icon/iconCircle.js";
-import { lighterRgb } from "../../../utils.js";
+import { lighterColor } from "../../../utils.js";
 
 export const Stats = ({ globalProgress, totalSequences }) => {
   return `
@@ -12,7 +12,7 @@ export const Stats = ({ globalProgress, totalSequences }) => {
   })}
 
       <div class="ModulesPageLayout__learning-path-counts">
-        <div class="ModulesPageLayout__learning-path-counts-icon">${IconCircle("three--dots--vertical", { bgColor: lighterRgb("rgb(166, 77, 144)", 0.75), color: "rgb(166, 77, 144)", size: 64, iconSize: 50 })}</div>
+        <div class="ModulesPageLayout__learning-path-counts-icon">${IconCircle("three--dots--vertical", { bgColor: lighterColor("rgb(166, 77, 144)", 0.75), color: "rgb(166, 77, 144)", size: 64, iconSize: 50 })}</div>
 
         <div class="ModulesPageLayout__learning-path-counts-text">
 

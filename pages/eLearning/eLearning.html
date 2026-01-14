@@ -15,13 +15,13 @@
 
 <body>
     <header id="header"></header>
-    <section class="AppLayout" style="display:flex">
+    <section class="AppLayout" style="display:flex; overflow:hidden;">
         <aside class="AppLayout_sidebar">
             <div class="V2_LeftMenuLayout__body"></div>
         </aside>
-        <main class="ModulesPageLayout">
+        <main class="ModulesPageLayout" style="overflow:hidden;">
             <h1 class="ModulesPageLayout__title">Séquences e-learning</h1>
-            <div id="elearning-root"></div>
+            <div id="elearning-root" style="display:flex; flex-direction:column;"></div>
         </main>
     </section>
     <script type="module">

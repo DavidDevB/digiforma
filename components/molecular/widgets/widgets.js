@@ -1,12 +1,28 @@
+import IconCircle from "../icon/iconCircle.js";
+import IconSquare from "../icon/iconSquare.js";
+import button from "../../atomic/button/button.js";
 
-  const widgets = () => {
-    return(`
-    <!-- Prochain créneau -->
+const icons = {
+  nextSlot: "calendar",
+  evaluations: "star",
+  documents: "folder",
+  elearning: "three--dots--vertical",
+  signatures: "sign",
+  rules: "download",
+  trainers: "users",
+
+  avatarFallback: "user",
+};
+
+const widgets = () => {
+  return `
     <div class="widgets-grid">
+
+      <!-- Prochain créneau -->
       <section class="w-card">
         <div class="w-head">
           <div class="w-ico" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M7 2h2v2h6V2h2v2h3v18H4V4h3V2zm13 8H4v10h16V10z"/></svg>
+            ${IconCircle(icons.nextSlot, { iconSize: 35 })}
           </div>
           <div>
             <div class="w-title">Prochain créneau</div>
@@ -20,13 +36,13 @@
       <section class="w-card">
         <div class="w-head">
           <div class="w-ico" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M12 2l3 7 7 .6-5.3 4.6 1.7 7-6.4-3.9L6.3 21 8 14.2 2.8 9.6 10 9z"/></svg>
+            ${IconCircle(icons.evaluations, { iconSize: 35 })}
           </div>
           <div>
             <div class="w-title">Évaluations</div>
             <div class="w-sub">4 évaluations en attente</div>
           </div>
-          <div><button class="btn-pill">Compléter</button></div>
+          ${button("Compléter", "/pages/evaluations/evaluations.html")}
         </div>
       </section>
 
@@ -34,7 +50,7 @@
       <section class="w-card">
         <div class="w-head">
           <div class="w-ico" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M6 2h9l5 5v15H6V2zm8 1v5h5"/></svg>
+            ${IconCircle(icons.documents, { iconSize: 35 })}
           </div>
           <div>
             <div class="w-title">Documents</div>
@@ -48,7 +64,7 @@
       <section class="w-card">
         <div class="w-head">
           <div class="w-ico" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M8 5v14l12-7z"/></svg>
+            ${IconCircle(icons.elearning, { iconSize: 35 })}
           </div>
           <div>
             <div class="w-title">E-learning</div>
@@ -68,7 +84,7 @@
           </div>
 
           <div class="el-cta">
-            <button class="btn-pill">Accéder au e-learning</button>
+            ${button("Accéder au E-learning", "/pages/eLearning/eLearning.html")}
           </div>
         </div>
       </section>
@@ -77,13 +93,13 @@
       <section class="w-card">
         <div class="w-head">
           <div class="w-ico" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M3 21l3-1 11-11-2-2L4 18l-1 3zm14-14l2 2 2-2-2-2-2 2z"/></svg>
+            ${IconCircle(icons.signatures, { iconSize: 35 })}
           </div>
           <div>
             <div class="w-title">Émargements</div>
             <div class="w-sub">1 signature en attente</div>
           </div>
-          <div><button class="btn-pill">Signer</button></div>
+          ${button("Signer", "/pages/emargements/emargements.html")}
         </div>
       </section>
 
@@ -91,12 +107,12 @@
       <section class="w-card">
         <div class="w-head">
           <div class="w-ico" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M12 3v10l4-4 1 1-6 6-6-6 1-1 4 4V3h2zm-8 16h16v2H4v-2z"/></svg>
+            ${IconCircle(icons.rules, { iconSize: 35 })}
           </div>
           <div>
             <div class="w-title">Règlement intérieur</div>
           </div>
-          <div><button class="btn-pill">Télécharger</button></div>
+          ${button("Télécharger", "/assets/docs/reglement-interieur.pdf")}
         </div>
       </section>
 
@@ -104,7 +120,7 @@
       <section class="w-card">
         <div class="w-head">
           <div class="w-ico" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5zm0 2c-5 0-9 3-9 7h2c0-3 3-5 7-5s7 2 7 5h2c0-4-4-7-9-7z"/></svg>
+            ${IconCircle(icons.trainers, { iconSize: 35 })}
           </div>
           <div>
             <div class="w-title">Vos intervenants</div>
@@ -115,44 +131,60 @@
 
         <div class="w-body">
           <div class="people-grid">
-            ${person("BF", "BELLAVIA", "Fabrice")}
-            ${person("ME", "MONTEIRO", "Elisabeth")}
-            ${person("DM", "DIOP", "Mor")}
-            ${person("AU", "AUTONOME", "")}
-            ${person("RM", "ROGER", "Marck")}
-            ${person("ES", "ETCHEBARNE", "Stella")}
-            ${person("BM", "BRET", "Martial")}
-            ${person("LT", "LACLAU", "Tristan")}
-            ${person("PA", "PINEIRO", "Andrea")}
+            ${person({ last: "BELLAVIA", first: "Fabrice", photoUrl: null })}
+            ${person({ last: "MONTEIRO", first: "Elisabeth", photoUrl: null })}
+            ${person({ last: "DIOP", first: "Mor", photoUrl: "/assets/mor.png" })}
+            ${person({ last: "AUTONOME", first: "", photoUrl: null })}
+            ${person({ last: "ROGER", first: "Marck", photoUrl: null })}
+            ${person({ last: "ETCHEBARNE", first: "Stella", photoUrl: null })}
+            ${person({ last: "BRET", first: "Martial", photoUrl: "/assets/martial.png" })}
+            ${person({ last: "LACLAU", first: "Tristan", photoUrl: null })}
+            ${person({ last: "PINEIRO", first: "Andrea", photoUrl: null })}
           </div>
         </div>
       </section>
+
     </div>
-  `)};
+  `;
+};
 
-  function elItem(code, name, pct){
-    return `
-      <div class="el-item">
-        <div>
-          <div class="el-code">${code}</div>
-          <div class="el-name">${name}</div>
-        </div>
-        <div class="el-right">
-          <span class="el-pct">${pct} %</span>
-          <span class="el-ring" style="--p:${pct}"></span>
-        </div>
+const elItem = (code, name, pct) => {
+  return `
+    <div class="el-item">
+      <div>
+        <div class="el-code">${code}</div>
+        <div class="el-name">${name}</div>
+      </div>
+      <div class="el-right">
+        <span class="el-pct">${pct} %</span>
+        <span class="el-ring" style="--p:${pct}"></span>
+      </div>
+    </div>
+  `;
+};
+
+const person = ({ last, first, photoUrl }) => {
+  const alt = `${first} ${last}`.trim();
+
+  const avatar = photoUrl
+    ? `
+      <div class="avatar avatar--square" aria-hidden="false">
+        <img src="${photoUrl}" alt="${alt}" />
+      </div>
+    `
+    : `
+      <div class="avatar avatar--square" aria-hidden="true">
+        ${IconSquare(icons.avatarFallback, { size: 96, iconSize: 48, borderWidth: 4 })}
       </div>
     `;
-  }
 
-  function person(initials, last, first){
-    return `
-      <div class="person">
-        <div class="avatar">${initials}</div>
-        <div class="p-name">${last}</div>
-        <div class="p-sub">${first || "&nbsp;"}</div>
-      </div>
-    `;
-  }
+  return `
+    <div class="person">
+      ${avatar}
+      <div class="p-name">${last}</div>
+      <div class="p-sub">${first || "&nbsp;"}</div>
+    </div>
+  `;
+};
 
-  export default widgets;
+export default widgets;

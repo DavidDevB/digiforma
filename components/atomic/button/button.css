@@ -1,9 +1,16 @@
-.Button {font-size: 16px;
-    color: white;
+a.Button {
+  font-size: 16px;
+  color: white;
   background: #b2539a;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   padding: 6px 8px;
   text-decoration: none;
+}
+
+div.Widget__action {
+  display: flex;
+  justify-content: flex-end;
+
 }

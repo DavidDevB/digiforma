@@ -41,6 +41,3 @@ export const SequenceCard = (seq) => {
     </li>
   `;
 };
-// <svg aria-hidden="true" class="SvgIcon SvgIcon--size-lg">
-//   <use href="./assets/icons.svg#checkmark--circle"></use>
-// </svg>

@@ -1,4 +1,4 @@
-import { lighterRgb } from "../../../utils.js";
+import { lighterColor } from "../../../utils.js";
 
 export const IconSquare = (iconName, options = {}) => {
   const {
@@ -7,13 +7,14 @@ export const IconSquare = (iconName, options = {}) => {
     bgColor = "rgb(166, 77, 144)",
     color = "white",
     borderWidth = 3,
+    borderLighten = 0.35,
   } = options;
 
-
-  const borderColor = lighterRgb(bgColor, 0.35);
+  const borderColor = lighterColor(bgColor, borderLighten);
 
   return `
     <div
+      class="IconSquare"
       style="
         background-color:${bgColor};
         width:${size}px;
@@ -23,6 +24,7 @@ export const IconSquare = (iconName, options = {}) => {
         display:flex;
         align-items:center;
         justify-content:center;
+        box-sizing:border-box;
       "
     >
       <svg
