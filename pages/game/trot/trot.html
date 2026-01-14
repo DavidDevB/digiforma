@@ -226,9 +226,9 @@
             <div class="input-group">
                 <label for="raceType">Type de course :</label>
                 <select id="raceType">
-                    <option value="trifecta">Trifecta (3 gagnants)</option>
-                    <option value="quartet">Quartet (4 gagnants)</option>
-                    <option value="quintet">Quintet (5 gagnants)</option>
+                    <option value="Tiercé">Tiercé (3 gagnants)</option>
+                    <option value="Quartet">Quartet (4 gagnants)</option>
+                    <option value="Quinté">Quinté (5 gagnants)</option>
                 </select>
             </div>
 
@@ -262,7 +262,7 @@
 
     <script>
         // Variables globales
-        const raceTypes = {"trifecta": 3, "quartet": 4, "quintet": 5};
+        const raceTypes = {"Tiercé": 3, "Quartet": 4, "Quinté": 5};
         let chart = null;
         let horses = [];
         let winners = [];
@@ -297,7 +297,7 @@
             for (let i = 1; i <= num; i++) {
                 horses.push({
                     number: i,
-                    name: `Horse ${i}`,
+                    name: `Cheval ${i}`,
                     dist: 0,
                     speed: 0
                 });
@@ -314,7 +314,7 @@
                 const index = horses.indexOf(horse);
                 horses.splice(index, 1);
                 colors.splice(index, 1);
-                log(`Horse number ${horse.number} is disqualified!`, 'error');
+                log(`Cheval numéro ${horse.number} est disqualifié !`, 'error');
             } else {
                 horse.speed += change;
             }
@@ -467,13 +467,13 @@
 
             let message = '';
             switch (raceType) {
-                case 'trifecta':
+                case 'Tiercé':
                     message = `Les gagnants sont ${winners[0].name}, ${winners[1].name} et ${winners[2].name}!`;
                     break;
-                case 'quartet':
+                case 'Quartet':
                     message = `Les gagnants sont ${winners[0].name}, ${winners[1].name}, ${winners[2].name} et ${winners[3].name}!`;
                     break;
-                case 'quintet':
+                case 'Quinté':
                     message = `Les gagnants sont ${winners[0].name}, ${winners[1].name}, ${winners[2].name}, ${winners[3].name} et ${winners[4].name}!`;
                     break;
             }
