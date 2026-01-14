@@ -4,20 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jeu de Nim</title>
-    <link rel="stylesheet" href="../../../components/molecular/header/header.css">
     <link rel="stylesheet" href="./NimGame.css">
+    <link rel="stylesheet" href="./mlGame.css" />
 </head>
+
 <body>
-    <div id="root">
-        <div>
-            <header id="header"></header>
-        </div>
+    <div style="display:flex; position:absolute; top:0; left:0">
+        <div id="return"></div>
     </div>
-    <section id="NimGame" style="background-image: linear-gradient(rgb(255, 255, 255), rgb(240, 240, 255)); padding:20px;"></section>
+    <section id="NimGame"></section>
 
     <script type="module">
-        import { renderHeader } from '../../../components/molecular/header/header.js';
-        document.getElementById('header').innerHTML = renderHeader();
+        import IconSquare from "../../../components/molecular/icon/iconSquare.js"
+        document.getElementById("return").innerHTML = `<div style="margin:20px"><a href="/pages/eLearning/eLearning.html">${IconSquare("arrow--left")}</a></div>`
 
         import { NimGame, handleClick } from './NimGame.js';
         document.getElementById('NimGame').innerHTML = NimGame([1,3,5,7]);

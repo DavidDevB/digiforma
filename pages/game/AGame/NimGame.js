@@ -4,20 +4,20 @@ let row = [1, 3, 5, 7];
 export function NimGame(row) {
     const result = `
         <main class="nim-game">
-            <h2>Jeu de Nim</h2>
+            <h1>Jeu de Nim</h1>
             <div style="text-align: left;">
                 <p>
                     Le jeu de Nim se joue avec plusieurs lignes d'allumettes (ici 4 lignes : 1, 3, 5 et 7 allumettes).<br>
-                    Les joueurs jouent à tour de rôle. À chaque tour, vous devez :
+                    Les deux joueurs jouent à tour de rôle. À chaque tour, vous devez :
                 </p>
-            <ul>
-                <li>Choisir une ligne d’allumettes</li>
-                <li>Retirer 1 à 4 allumettes de cette ligne</li>
-            </ul>
-            <p>
-                Attention : le joueur qui est forcé de prendre la dernière allumette perd la partie.<br>
-                Le joueur actuel est affiché et change à chaque tour.
-            </p>
+                <ul>
+                    <li>Choisir une ligne d’allumettes</li>
+                    <li>Retirer 1 à 4 allumettes de cette ligne</li>
+                </ul>
+                <p>
+                    Attention : le joueur qui est forcé de prendre la dernière allumette perd la partie.<br>
+                    Le joueur actuel est affiché et change à chaque tour.
+                </p>
             </div>
             <h3 class="current-player">Joueur actuel : ${currentPlayer}</h3>
             <section class="rows">

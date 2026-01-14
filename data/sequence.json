@@ -17,6 +17,14 @@
             "progress": 50,
             "href": "/pages/game/MLGame/mlGame.html",
             "isFinished": false
+        },
+        {
+            "id": "3",
+            "title": "Nim by Amandine",
+            "coverUrl": "/assets/nim.png",
+            "progress": 50,
+            "href": "/pages/game/Agame/NimGame.html",
+            "isFinished": false
         }
     ]
 }
