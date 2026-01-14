@@ -1,23 +1,28 @@
-let currentPlayer = "Joueur 1";
-let row = [1, 3, 5, 7];
+import { isGameOver, disableInputs, switchPlayer, registerEvents, playComputerTurn } from "./helpers.js";
 
-export function NimGame(row) {
+let currentPlayer = "Joueur 1";         
+
+// État initial des lignes d'allumettes 
+let row = [1, 3, 5, 7]; 
+                 
+let playersMode = null;                  
+
+// Fonction qui génère le HTML du jeu Nim
+export function NimGame() {
     const result = `
         <main class="nim-game">
             <h1>Jeu de Nim</h1>
             <div style="text-align: left;">
                 <p>
                     Le jeu de Nim se joue avec plusieurs lignes d'allumettes (ici 4 lignes : 1, 3, 5 et 7 allumettes).<br>
-                    Les deux joueurs jouent à tour de rôle. À chaque tour, vous devez :
+                    Les joueurs jouent à tour de rôle et retirent 1 à 4 allumettes d'une seule ligne.<br>
+                    Le joueur qui prend la dernière allumette perd la partie. <br>
+                    2 variantes possibles : 2 joueurs ou jouer contre l'ordinateur
                 </p>
-                <ul>
-                    <li>Choisir une ligne d’allumettes</li>
-                    <li>Retirer 1 à 4 allumettes de cette ligne</li>
-                </ul>
-                <p>
-                    Attention : le joueur qui est forcé de prendre la dernière allumette perd la partie.<br>
-                    Le joueur actuel est affiché et change à chaque tour.
-                </p>
+                <div class="controls">
+                    <button class="player-number" data-players="1">Contre l'ordinateur</button>
+                    <button class="player-number" data-players="2">2 joueurs</button>
+                </div>
             </div>
             <h3 class="current-player">Joueur actuel : ${currentPlayer}</h3>
             <section class="rows">
@@ -29,76 +34,83 @@ export function NimGame(row) {
                         <input type="radio" value="${index}" name="rowIndex">
                     </div>
                 `).join('')}
-
             </section>
             <div class="controls">
                 <label>
                     Combien d'allumettes à retirer : 
-                    <input type="number" name="stickQuantity" min="1">
+                    <input type="number" name="stickQuantity" min="1" max="4">
                 </label>  
                 <button id="validate">Valider mon choix</button>   
             </div>
         </main>
     `;
 
-    setTimeout(() => {
-        const btn = document.getElementById('validate');
-        if (btn) btn.addEventListener('click', handleClick);
-    }, 0);
+    // Enregistre les événements après que le DOM soit mis à jour
+    // Passe handleClick pour gérer le bouton "Valider" et mettre à jour le mode de jeu
+    setTimeout(() => registerEvents(handleClick, (mode) => playersMode = mode), 0);
 
     return result;
 }
 
+// Fonction qui gère le clic sur "Valider mon choix"
 export function handleClick() {
-    const selectedIndexInput = document.querySelector('input[name="rowIndex"]:checked');
-    const stickQuantityInput = document.querySelector('input[name="stickQuantity"]');
-    const maxSticksToRemove = 4;
+    const selectedIndexInput = document.querySelector('input[name="rowIndex"]:checked'); 
+    const stickQuantityInput = document.querySelector('input[name="stickQuantity"]');   
+    const maxSticksToRemove = 4;                                                  
 
-    // Vérifie qu'une ligne a été sélectionné
-    if (!selectedIndexInput) {
-        alert("Veuillez sélectionner une ligne !");
-        return;
+    // Vérifie qu'une ligne a été sélectionnée
+    if (!selectedIndexInput) { 
+        alert("Veuillez sélectionner une ligne !"); 
+        return; 
     }
 
     const selectedIndex = parseInt(selectedIndexInput.value);
     const sticksToRemove = parseInt(stickQuantityInput.value);
 
-    // Vérifie que le chiffre saisi est un nombre positif
-    if (isNaN(sticksToRemove) || sticksToRemove < 1) {
-        alert("Veuillez saisir un nombre valide d'allumettes.");
-        return;
+    // Vérifie que la valeur saisie est valide
+    if (isNaN(sticksToRemove) || sticksToRemove < 1) { 
+        alert("Veuillez saisir un nombre valide d'allumettes."); 
+        return; 
     }
 
-    // Vérifie que le nombre d'allumettes ne passe pas le nombre d'allumettes restantes dans la ligne
-    if (sticksToRemove > row[selectedIndex]) {
-        alert(`Vous ne pouvez retirer que ${row[selectedIndex]} allumettes sur cette ligne.`);
-        return;
-    }
-    // Vérifie que le nombre d'allumettes ne passe pas maxSticksToRemove
-    else if (sticksToRemove > maxSticksToRemove){
-        alert(`Vous ne pouvez retirer que ${maxSticksToRemove} allumettes maximum.`);
-        return;
+    // Vérifie que le nombre d'allumettes ne dépasse pas le nombre restant dans la ligne
+    if (sticksToRemove > row[selectedIndex]) { 
+        alert(`Vous ne pouvez retirer que ${row[selectedIndex]} allumettes sur cette ligne.`); 
+        return; 
     }
 
-    // Déduit le nombre d'allumettes sur la ligne selectionnée
+    // Vérifie que le nombre d'allumettes ne dépasse pas la limite max
+    if (sticksToRemove > maxSticksToRemove){ 
+        alert(`Vous ne pouvez retirer que ${maxSticksToRemove} allumettes maximum.`); 
+        return; 
+    }
+
+    // Retire les allumettes de la ligne sélectionnée
     row[selectedIndex] -= sticksToRemove;
 
-    const totalSticks = row.reduce((a,b)=>a+b,0);
-
-    // Vérifie si la partie est gagnée
-    if (totalSticks === 1) {
-        alert(`${currentPlayer} a gagné ! 🎉`);
-        // Empêche le joueur de continuer de jouer lorsque la partie est finie
-        document.querySelector('input[name="stickQuantity"]').disabled = true;
-        document.querySelectorAll('input[name="rowIndex"]').forEach(input => input.disabled = true);
-        document.getElementById('validate').disabled = true;
-        return;
+    // Vérifie si la partie est terminée
+    if (isGameOver(row)) { 
+        alert(`${currentPlayer} a gagné !!!`); 
+        disableInputs();  // Bloque les inputs et le bouton
+        return; 
     }
 
+    // Change de joueur
+    currentPlayer = switchPlayer(currentPlayer);
 
-    // Changer de joueur
-    currentPlayer = currentPlayer === "Joueur 1" ? "Joueur 2" : "Joueur 1";
+    // Rafraîchit l'affichage du jeu
+    document.getElementById('NimGame').innerHTML = NimGame();
 
-    // Rafraichir l'affichage du jeu
-    document.getElementById('NimGame').innerHTML = NimGame(row);
+    // Si c'est le mode contre ordinateur et que c'est à l'ordinateur de jouer
+    if (playersMode === 1 && currentPlayer === "Joueur 2") {
+        setTimeout(() => 
+            playComputerTurn(
+                row, 
+                (player) => currentPlayer = player, 
+                () => document.getElementById('NimGame').innerHTML = NimGame(), 
+                isGameOver, 
+                disableInputs
+            ), 
+        800);
+    }
 }
