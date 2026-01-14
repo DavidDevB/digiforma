@@ -25,6 +25,14 @@
             "progress": 70,
             "href": "/pages/game/Agame/NimGame.html",
             "isFinished": false
+        },
+        {
+            "id": "4",
+            "title": "Trot attelé by David",
+            "coverUrl": "/assets/cap.png",
+            "progress": 80,
+            "href": "/pages/game/trot/trot.html",
+            "isFinished": false
         }
     ]
 }
