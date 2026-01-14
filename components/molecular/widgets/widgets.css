@@ -27,6 +27,12 @@ body {
   align-items: start;
 }
 
+.widgets-grid {
+  display: grid;
+  gap: 18px;
+  font-size: 20px;
+}
+
 /* colonnes */
 .left-col {
   position: sticky;
@@ -96,7 +102,7 @@ body {
 
 .w-sub {
   margin-top: 2px;
-  font-size: 12px;
+  font-size: 15px;
   color: var(--muted);
 }
 

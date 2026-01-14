@@ -5,7 +5,8 @@
     flex-direction: column;
     gap: 20px;
     padding: 20px;
-    width: 100%;
+    width: 80%;
+    align-items: center;
 }
 
 .HomeContent h2 {
@@ -32,4 +33,10 @@
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+img {
+    max-width: 65%;
+    height: auto;
+    border-radius: 8px;
 }
