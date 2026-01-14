@@ -118,7 +118,7 @@ body {
     margin: 0;
     display: flex;
     gap: 20px;
-    overflow-x: scroll;
+    overflow-x: auto;
 }
 
 /* ---- Card ---- */
