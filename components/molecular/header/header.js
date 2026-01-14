@@ -9,7 +9,7 @@ export function renderHeader() {
         <!-- LOGO -->
         <div class="header__icon">
           ${ClickableLogo({
-    href: "/",
+    href: "/pages/RootPage/RootPage.html",
     src: "../../../assets/logoFms.png",
     alt: "FMS Academy",
     width: 65,
@@ -37,7 +37,7 @@ export function renderHeader() {
             aria-haspopup="true"
             aria-expanded="false"
           >
-            <span>RABORD Marty</span>
+            <span>MYSDF Merignac</span>
             <span aria-hidden="true">▾</span>
           </button>
 

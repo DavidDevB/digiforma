@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course de Trot Attelé</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+
+        .setup-section {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .input-group {
+            margin: 15px 0;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+            font-size: 1.1em;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border 0.3s;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        button {
+            flex: 1;
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        #stepBtn {
+            background: #28a745;
+        }
+
+        #stepBtn:hover:not(:disabled) {
+            background: #218838;
+        }
+
+        #resetBtn {
+            background: #dc3545;
+        }
+
+        #resetBtn:hover {
+            background: #c82333;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 600px;
+            margin: 30px 0;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .race-info {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .race-info.active {
+            display: block;
+        }
+
+        .race-info p {
+            margin: 5px 0;
+            font-size: 1.1em;
+            color: #333;
+        }
+
+        .winners-section {
+            background: #fff3cd;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            display: none;
+        }
+
+        .winners-section.active {
+            display: block;
+        }
+
+        .winners-section h2 {
+            color: #856404;
+            margin-bottom: 15px;
+        }
+
+        .winner-item {
+            background: white;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border-left: 5px solid #ffc107;
+            font-size: 1.1em;
+        }
+
+        .console {
+            background: #1e1e1e;
+            color: #00ff00;
+            padding: 20px;
+            border-radius: 10px;
+            max-height: 300px;
+            overflow-y: auto;
+            font-family: 'Courier New', monospace;
+            margin-top: 20px;
+        }
+
+        .console-line {
+            margin: 5px 0;
+            padding: 3px 0;
+        }
+
+        .console-line.error {
+            color: #ff6b6b;
+        }
+
+        .console-line.success {
+            color: #51cf66;
+        }
+
+        .console-line.info {
+            color: #74c0fc;
+        }
+
+        .error-message {
+            color: #dc3545;
+            font-size: 0.9em;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .error-message.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div style="display:flex; position:absolute; top:0; left:0">
+        <div id="return"></div>
+    </div>
+    <div class="container">
+        <h1>🏇 Course de Trot Attelé</h1>
+
+        <div class="setup-section" id="setupSection">
+            <div class="input-group">
+                <label for="numOfHorses">Nombre de chevaux (12-20) :</label>
+                <input type="number" id="numOfHorses" min="12" max="20" value="12">
+                <span class="error-message" id="horsesError">Veuillez entrer un nombre entre 12 et 20</span>
+            </div>
+
+            <div class="input-group">
+                <label for="raceType">Type de course :</label>
+                <select id="raceType">
+                    <option value="Tiercé">Tiercé (3 gagnants)</option>
+                    <option value="Quartet">Quartet (4 gagnants)</option>
+                    <option value="Quinté">Quinté (5 gagnants)</option>
+                </select>
+            </div>
+
+            <div class="button-group">
+                <button id="launchBtn" onclick="launchRace()">🚀 Lancer la course</button>
+            </div>
+        </div>
+
+        <div class="race-info" id="raceInfo">
+            <p><strong>Type de course:</strong> <span id="infoRaceType"></span></p>
+            <p><strong>Nombre de chevaux:</strong> <span id="infoHorses"></span></p>
+            <p><strong>Gagnants attendus:</strong> <span id="infoWinners"></span></p>
+        </div>
+
+        <div class="button-group" id="controlButtons" style="display: none;">
+            <button id="stepBtn" onclick="raceStep()" disabled>➡️ Étape suivante</button>
+            <button id="resetBtn" onclick="resetRace()">🔄 Réinitialiser</button>
+        </div>
+
+        <div class="chart-container">
+            <canvas id="raceChart"></canvas>
+        </div>
+
+        <div class="winners-section" id="winnersSection">
+            <h2>🏆 Résultats de la course</h2>
+            <div id="winnersList"></div>
+        </div>
+
+        <div class="console" id="console"></div>
+    </div>
+
+    <script>
+        // Variables globales
+        const raceTypes = {"Tiercé": 3, "Quartet": 4, "Quinté": 5};
+        let chart = null;
+        let horses = [];
+        let winners = [];
+        let colors = [];
+        let raceType = "";
+        let isRaceActive = false;
+
+        // Règles de vitesse
+        const speedRules = {
+            0: {2: 1, 3: 1, 4: 1, 5: 2, 6: 2},
+            1: {3: 1, 4: 1, 5: 1, 6: 2},
+            2: {3: 1, 4: 1, 5: 1, 6: 2},
+            3: {1: -1, 4: 1, 5: 1, 6: 1},
+            4: {1: -1, 5: 1, 6: 1},
+            5: {1: -2, 2: -1, 6: 1},
+            6: {1: -2, 2: -1, 6: "disqualify"}
+        };
+
+        // Fonction pour logger dans la console personnalisée
+        function log(message, type = 'info') {
+            const consoleDiv = document.getElementById('console');
+            const line = document.createElement('div');
+            line.className = `console-line ${type}`;
+            line.textContent = `> ${message}`;
+            consoleDiv.appendChild(line);
+            consoleDiv.scrollTop = consoleDiv.scrollHeight;
+        }
+
+        // Générer les spécifications des chevaux
+        function getHorsesSpecs(num) {
+            const horses = [];
+            for (let i = 1; i <= num; i++) {
+                horses.push({
+                    number: i,
+                    name: `Cheval ${i}`,
+                    dist: 0,
+                    speed: 0
+                });
+            }
+            return horses;
+        }
+
+        // Mettre à jour la vitesse du cheval
+        function updateHorseSpeed(horse, dice) {
+            const rules = speedRules[horse.speed] || {};
+            const change = rules[dice] !== undefined ? rules[dice] : 0;
+
+            if (change === "disqualify") {
+                const index = horses.indexOf(horse);
+                horses.splice(index, 1);
+                colors.splice(index, 1);
+                log(`Cheval numéro ${horse.number} est disqualifié !`, 'error');
+            } else {
+                horse.speed += change;
+            }
+        }
+
+        // Initialiser le graphique
+        function initChart() {
+            const ctx = document.getElementById('raceChart').getContext('2d');
+            
+            if (chart) {
+                chart.destroy();
+            }
+
+            chart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: horses.map(h => h.name),
+                    datasets: [{
+                        label: 'Distance (m)',
+                        data: horses.map(h => h.dist),
+                        backgroundColor: colors,
+                        borderColor: colors.map(c => c),
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            max: 2400,
+                            ticks: {
+                                callback: function(value) {
+                                    return value + 'm';
+                                }
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    const horse = horses[context.dataIndex];
+                                    return `Distance: ${horse.dist}m | Vitesse: ${horse.speed}`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Mettre à jour le graphique
+        function updateChart() {
+            if (!chart) return;
+
+            chart.data.labels = horses.map(h => `${h.name} (V:${h.speed})`);
+            chart.data.datasets[0].data = horses.map(h => h.dist);
+            chart.data.datasets[0].backgroundColor = colors;
+            chart.update();
+        }
+
+        // Étape de course
+        function raceStep() {
+            if (!isRaceActive) return;
+
+            // Vérifier si la course est terminée
+            if (winners.length >= raceTypes[raceType] || !horses.some(horse => horse.dist < 2400)) {
+                endRace();
+                return;
+            }
+
+            log(`\n--- Tour ${Math.floor(Math.random() * 100)} ---`, 'info');
+
+            // Parcourir tous les chevaux
+            for (let i = horses.length - 1; i >= 0; i--) {
+                const horse = horses[i];
+
+                // Vérifier si le cheval a déjà gagné
+                if (winners.some(w => w.number === horse.number)) {
+                    continue;
+                }
+
+                const diceThrow = Math.floor(Math.random() * 6) + 1;
+                log(`${horse.name} lance le dé: ${diceThrow}`);
+
+                updateHorseSpeed(horse, diceThrow);
+
+                // Mise à jour de la distance selon la vitesse
+                switch (horse.speed) {
+                    case 0:
+                        continue;
+                    case 1:
+                        horse.dist += 23;
+                        break;
+                    case 2:
+                        horse.dist += 46;
+                        break;
+                    case 3:
+                        horse.dist += 69;
+                        break;
+                    case 4:
+                        horse.dist += 92;
+                        break;
+                    case 5:
+                        horse.dist += 115;
+                        break;
+                    case 6:
+                        horse.dist += 138;
+                        break;
+                }
+
+                log(`${horse.name}: Vitesse ${horse.speed} | Distance ${horse.dist}m`);
+
+                // Vérifier la condition de victoire
+                if (winners.length < raceTypes[raceType] && horse.dist >= 2400) {
+                    winners.push(horse);
+                    log(`🏆 ${horse.name} a terminé en position ${winners.length}!`, 'success');
+
+                    if (winners.length >= raceTypes[raceType]) {
+                        break;
+                    }
+                }
+            }
+
+            updateChart();
+
+            // Vérifier si la course est terminée
+            if (winners.length >= raceTypes[raceType]) {
+                endRace();
+            }
+        }
+
+        // Terminer la course
+        function endRace() {
+            isRaceActive = false;
+            document.getElementById('stepBtn').disabled = true;
+            
+            log('\n🏁 COURSE TERMINÉE!', 'success');
+            
+            const winnersSection = document.getElementById('winnersSection');
+            const winnersList = document.getElementById('winnersList');
+            winnersSection.classList.add('active');
+            winnersList.innerHTML = '';
+
+            let message = '';
+            switch (raceType) {
+                case 'Tiercé':
+                    message = `Les gagnants sont ${winners[0].name}, ${winners[1].name} et ${winners[2].name}!`;
+                    break;
+                case 'Quartet':
+                    message = `Les gagnants sont ${winners[0].name}, ${winners[1].name}, ${winners[2].name} et ${winners[3].name}!`;
+                    break;
+                case 'Quinté':
+                    message = `Les gagnants sont ${winners[0].name}, ${winners[1].name}, ${winners[2].name}, ${winners[3].name} et ${winners[4].name}!`;
+                    break;
+            }
+
+            log(message, 'success');
+
+            winners.forEach((winner, index) => {
+                const div = document.createElement('div');
+                div.className = 'winner-item';
+                div.innerHTML = `<strong>Position ${index + 1}:</strong> ${winner.name} - ${winner.dist}m`;
+                winnersList.appendChild(div);
+            });
+        }
+
+        // Lancer la course
+        function launchRace() {
+            const numOfHorses = parseInt(document.getElementById('numOfHorses').value);
+            const horsesError = document.getElementById('horsesError');
+
+            // Validation
+            if (!numOfHorses || numOfHorses < 12 || numOfHorses > 20) {
+                horsesError.classList.add('active');
+                return;
+            }
+            horsesError.classList.remove('active');
+
+            raceType = document.getElementById('raceType').value;
+
+            // Réinitialiser
+            horses = getHorsesSpecs(numOfHorses);
+            winners = [];
+            colors = horses.map(() => `#${Math.floor(Math.random() * 0xFFFFFF).toString(16).padStart(6, '0')}`);
+            isRaceActive = true;
+
+            // Masquer la section de configuration
+            document.getElementById('setupSection').style.display = 'none';
+            document.getElementById('controlButtons').style.display = 'flex';
+            document.getElementById('stepBtn').disabled = false;
+
+            // Afficher les informations de course
+            const raceInfo = document.getElementById('raceInfo');
+            raceInfo.classList.add('active');
+            document.getElementById('infoRaceType').textContent = raceType.charAt(0).toUpperCase() + raceType.slice(1);
+            document.getElementById('infoHorses').textContent = numOfHorses;
+            document.getElementById('infoWinners').textContent = raceTypes[raceType];
+
+            // Masquer la section des gagnants
+            document.getElementById('winnersSection').classList.remove('active');
+
+            // Vider la console
+            document.getElementById('console').innerHTML = '';
+
+            log('🏇 Lancement de la course...', 'success');
+            log(`Nombre de chevaux: ${numOfHorses}`);
+            log(`Type de course: ${raceType}`);
+            log(`Gagnants attendus: ${raceTypes[raceType]}`);
+
+            // Initialiser le graphique
+            initChart();
+        }
+
+        // Réinitialiser la course
+        function resetRace() {
+            isRaceActive = false;
+            horses = [];
+            winners = [];
+            colors = [];
+
+            document.getElementById('setupSection').style.display = 'block';
+            document.getElementById('controlButtons').style.display = 'none';
+            document.getElementById('raceInfo').classList.remove('active');
+            document.getElementById('winnersSection').classList.remove('active');
+            document.getElementById('console').innerHTML = '';
+
+            if (chart) {
+                chart.destroy();
+                chart = null;
+            }
+
+            log('🔄 Course réinitialisée', 'info');
+        }
+    </script>
+    <script type="module">
+        import IconSquare from "../../../components/molecular/icon/iconSquare.js"
+        document.getElementById("return").innerHTML = `<div style="margin:20px"><a href="/pages/eLearning/eLearning.html">${IconSquare("arrow--left")}</a></div>`   
+    </script>
+</body>
+</html>

@@ -5,9 +5,10 @@
     font-weight: 500;
     font-size: 20px;
     color: var(--colors-grey-900);
+    min-width: 250px
 }
 
-    .SidebarNavigationContent {
+.SidebarNavigationContent {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -24,6 +25,7 @@
     margin-bottom: var(--space-4);
     padding: 0;
     padding-bottom: var(--space-4);
+
 }
 
 .SidebarNavigationContent__navigation {
@@ -34,4 +36,18 @@
     padding: var(--space-2) var(--space-3);
     border-radius: var(--border-radius-1);
     margin: 5px 0;
+    color: inherit;
+    text-decoration: none;
+}
+
+.SidebarNavigationContent__navigation_a {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    cursor: pointer;
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--border-radius-1);
+    color: inherit;
+    text-decoration: none;
+    font-size: smaller;
 }
