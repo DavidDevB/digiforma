@@ -18,7 +18,7 @@ export const ClickableLogo = (options = {}) => {
       <img
         src="${src}"
         alt="${alt}"
-        style="width:${width}px; height:${height}; min-width:${width}px; max-width:${width}px;"
+        style="width:${width}px; height:${height}; min-width:${width}px; max-width:${width}px;box-shadow:none; border-radius:0"
         class="clickable-logo__image"
       />
     </a>
