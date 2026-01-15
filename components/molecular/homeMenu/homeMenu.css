@@ -5,7 +5,13 @@
     font-weight: 500;
     font-size: 20px;
     color: var(--colors-grey-900);
-    min-width: 350px
+    min-width: 350px;
+
+
+    position: sticky;
+    top: 100px;
+    overflow: auto;
+    height: calc(100vh - 100px);
 }
 
 .SidebarNavigationContent {
