@@ -41,7 +41,8 @@
 }
 
 img {
-    width: 100%;
+    width: 80%;
     height: auto;
-    border-radius: 8px;
+    box-shadow: 22px 12px 64px #0003;
+    border-radius: 16px;
 }
