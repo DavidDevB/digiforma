@@ -1,4 +1,5 @@
-.rootpage_item{
+.rootpage_item {
+    display: flex;
     width: 280px;
     font-family: 'Satoshi', sans-serif;
     background-color: #fff;
@@ -7,14 +8,14 @@
     box-shadow: 0px 1px 2px #0000001a;
     overflow: clip;
     box-sizing: border-box;
+    flex-direction: column;
 }
 
-.rootpage_item_img{
+.rootpage_item_img {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 154px;
-    width: 298px;
     padding: 1.25rem;
     background-color: rgb(178, 83, 154);
     background-position: center;
@@ -23,22 +24,26 @@
     border-radius: inherit;
 }
 
-.rootpage_item_body{
+.rootpage_item_body {
+    display: flex;
     padding: 1rem;
     color: black;
-    margin: auto;
-    margin-block-end: 1em;
     text-align: center;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
 
 }
 
-.rootpage_item_title{
-    color : rgb(178,83,154);
+.rootpage_item_title {
+    color: rgb(178, 83, 154);
     font-weight: 700;
     font-size: 1.25rem;
     text-align: center;
+    min-height: 100px;
+    margin: 0
 }
 
-.rootpage_item_date{
+.rootpage_item_date {
     text-align: center;
 }

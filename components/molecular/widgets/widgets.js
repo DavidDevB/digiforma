@@ -168,7 +168,7 @@ const person = ({ last, first, photoUrl }) => {
 
   const avatar = photoUrl
     ? `
-      <div class="avatar avatar--square" aria-hidden="false">
+      <div class="avatar avatar--square" aria-hidden="false" >
         <img src="${photoUrl}" alt="${alt}" />
       </div>
     `

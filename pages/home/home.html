@@ -36,7 +36,7 @@
         import homeTitle from '../../components/molecular/homeTitle/homeTitle.js';
         import homeContent from '../../components/molecular/homeContent/homeContent.js';
         import widgets from '../../components/molecular/widgets/widgets.js';
-        document.getElementById('header').innerHTML = renderHeader();
+        document.getElementById('header').innerHTML = renderHeader(true);
         initHeader();
         const body = document.querySelector(".V2_LeftMenuLayout__body");
         body.insertAdjacentHTML('afterbegin', homeMenu());

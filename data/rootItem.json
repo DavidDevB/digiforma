@@ -1,0 +1,30 @@
+{
+    "current": [
+        {
+            "title": "PREPA-CONCEPTEUR DEVELOPPEUR D'APPLICATION PYTHON-JAVA",
+            "startDate": "22/09/2025",
+            "endDate": "10/04/2026",
+            "coverUrl": "https://tse4.mm.bing.net/th/id/OIP.1qij5cctDEYgjNkZTECQygHaE8?cb=defcachec2&rs=1&pid=ImgDetMain&o=7&rm=3"
+        },
+        {
+            "title": "ANG-CDA Python-Java",
+            "startDate": "01/10/2025",
+            "endDate": "15/03/2026",
+            "coverUrl": "/assets/hero1.jpg"
+        }
+    ],
+    "completed": [
+        {
+            "title": "ANG-BUSI-002 Business Essentials",
+            "startDate": "02/01/2025",
+            "endDate": "15/02/2025",
+            "coverUrl": "/assets/hero2.jpg"
+        },
+        {
+            "title": "ANG-EMAI-002 Emails: Comprendre et rédiger",
+            "startDate": "20/02/2025",
+            "endDate": "30/03/2025",
+            "coverUrl": "/assets/hero3.jpg"
+        }
+    ]
+}

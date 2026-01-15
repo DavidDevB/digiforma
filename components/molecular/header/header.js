@@ -1,7 +1,7 @@
 import { ClickableLogo } from "../../atomic/logo/clickableLogo.js";
 import { IconCircle } from "../../molecular/icon/iconCircle.js";
 
-export function renderHeader() {
+export function renderHeader(showMenu) {
   return `
     <header class="header">
       <div class="header__container">
@@ -30,7 +30,7 @@ export function renderHeader() {
           </button>
 
           <!-- Bouton profil -->
-          <button
+          ${showMenu ? `  <button
             class="header__profile-name"
             type="button"
             id="openProfileModal"
@@ -47,7 +47,8 @@ export function renderHeader() {
               <a href="#" class="modal__link" role="menuitem">Paramètres</a>
               <a href="#" class="modal__link" role="menuitem">Déconnexion</a>
             </div>
-          </div>
+          </div>`: `<span style="font-family:satoshi, sans-serif;">MYSDF Merignac</span>`}
+
 
         </div>
       </div>

@@ -1,54 +1,60 @@
-import { IconCircle } from "../../components/molecular/icon/iconCircle.js"
-import { RootPage_item } from "../../components/molecular/RootPage_item/RootPage_item.js"
+import { IconCircle } from "../../components/molecular/icon/iconCircle.js";
+import { RootPage_item } from "../../components/molecular/RootPage_item/RootPage_item.js";
+
+const loadSessions = async () => {
+    const res = await fetch("../../data/rootItem.json");
+    return res.json();
+};
 
 
-export function RootPage() {
+
+export async function RootPage() {
+    const data = await loadSessions();
+
+    console.log(data)
+
+
     return `
-        <body class="body-style">
-            <main class="CommonPagesLayout__content">
-                <h1 class="heading--level-1">Toutes mes sessions</h1>
-                <div class="RootPage__ts-list-header">
-                    <div>${IconCircle("student--hat")}</div>
-                    <h2 class="Heading Heading--level-2">Mes sessions en cours</h2>
-                </div>
-                <section class="RootPage__training-sessions-list">
-                    <div>
-                        ${RootPage_item(
-                            "PREPA-CONCEPTEUR DEVELOPPEUR D'APPLICATION PYTHON-JAVA", 
-                            '22/09/2025', 
-                            '10/04/2026', 
-                            "https://tse4.mm.bing.net/th/id/OIP.1qij5cctDEYgjNkZTECQygHaE8?cb=defcachec2&rs=1&pid=ImgDetMain&o=7&rm=3")}
-                    </div>
-                    <div>
-                        ${RootPage_item(
-                            "PREPA-CONCEPTEUR DEVELOPPEUR D'APPLICATION PYTHON-JAVA", 
-                            '22/09/2025', 
-                            '10/04/2026', 
-                            "https://tse4.mm.bing.net/th/id/OIP.1qij5cctDEYgjNkZTECQygHaE8?cb=defcachec2&rs=1&pid=ImgDetMain&o=7&rm=3")}
-                    </div>
-                </section>
-                <div class="RootPage__ts-list-header">
-                    <div>${IconCircle("student--hat")}</div>
-                    <h2 class="Heading Heading--level-2">Mes sessions terminées</h2>
-                </div>
-                <section class="RootPage__training-sessions-list">
-                    <div>
-                        ${RootPage_item(
-                            "PREPA-CONCEPTEUR DEVELOPPEUR D'APPLICATION PYTHON-JAVA", 
-                            '22/09/2025', 
-                            '10/04/2026', 
-                            "https://tse4.mm.bing.net/th/id/OIP.1qij5cctDEYgjNkZTECQygHaE8?cb=defcachec2&rs=1&pid=ImgDetMain&o=7&rm=3")}
-                    </div>
-                    <div>
-                        ${RootPage_item(
-                            "PREPA-CONCEPTEUR DEVELOPPEUR D'APPLICATION PYTHON-JAVA", 
-                            '22/09/2025', 
-                            '10/04/2026', 
-                            "https://tse4.mm.bing.net/th/id/OIP.1qij5cctDEYgjNkZTECQygHaE8?cb=defcachec2&rs=1&pid=ImgDetMain&o=7&rm=3")}
-                    </div>
-                </section>
-                
-            </main>
-        </body>
-    `
+        <main class="CommonPagesLayout__content">
+            <h1 class="heading--level-1">Toutes mes sessions</h1>
+
+            <div class="RootPage__ts-list-header">
+                <div>${IconCircle("student--hat")}</div>
+                <h2 class="Heading Heading--level-2">Mes sessions en cours</h2>
+            </div>
+
+            <section class="RootPage__training-sessions-list">
+                ${data.current
+            .map(item =>
+                RootPage_item(
+                    item.title,
+                    item.startDate,
+                    item.endDate,
+                    item.coverUrl
+                )
+            )
+            .join("")
+        }
+            </section>
+
+            <div class="RootPage__ts-list-header">
+                <div>${IconCircle("student--hat")}</div>
+                <h2 class="Heading Heading--level-2">Mes sessions terminées</h2>
+            </div>
+
+            <section class="RootPage__training-sessions-list">
+                ${data.completed
+            .map(item =>
+                RootPage_item(
+                    item.title,
+                    item.startDate,
+                    item.endDate,
+                    item.coverUrl
+                )
+            )
+            .join("")
+        }
+            </section>
+        </main>
+    `;
 }

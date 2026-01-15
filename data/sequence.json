@@ -29,14 +29,14 @@
         {
             "id": "4",
             "title": "Trot attelé by David",
-            "coverUrl": "/assets/cap.png",
+            "coverUrl": "/assets/davidGame.png",
             "progress": 80,
             "href": "/pages/game/trot/trot.html",
             "isFinished": false
         },
         {
             "id": "5",
-            "title": "Chifoumi",
+            "title": "Chifoumi by Yassine",
             "coverUrl": "/assets/chifoumi.png",
             "progress": 30,
             "href": "/pages/game/YPfc/pfc.html",
