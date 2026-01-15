@@ -30,7 +30,7 @@ const homeMenu = () => {
                     <li class="SidebarNavigationContent__navigation"> <a class="SidebarNavigationContent__navigation_a"  href="/pages/wip/wip.html">${IconCircle(icons.check, { bgColor: "transparent", color: window.location.pathname.includes("check") ? "rgb(166, 77, 144)" : "black" })} Emargements</li>
                     <li class="SidebarNavigationContent__navigation"> <a class="SidebarNavigationContent__navigation_a"  href="/pages/wip/wip.html">${IconCircle(icons.evaluation, { bgColor: "transparent", color: window.location.pathname.includes("evaluation") ? "rgb(166, 77, 144)" : "black" })}Evaluations</li>
                     <li class="SidebarNavigationContent__navigation"> <a class="SidebarNavigationContent__navigation_a"  href="/pages/wip/wip.html">${IconCircle(icons.document, { bgColor: "transparent", color: window.location.pathname.includes("document") ? "rgb(166, 77, 144)" : "black" })} Documents</li>
-                    <li class="SidebarNavigationContent__navigation"> <a class="SidebarNavigationContent__navigation_a"  href="/pages/wip/wip.html">${IconCircle(icons.info, { bgColor: "transparent", color: window.location.pathname.includes("info") ? "rgb(166, 77, 144)" : "black" })} A propos</li>
+                    <li class="SidebarNavigationContent__navigation"> <a class="SidebarNavigationContent__navigation_a"  href="/pages/about/about.html">${IconCircle(icons.info, { bgColor: "transparent", color: window.location.pathname.includes("info") ? "rgb(166, 77, 144)" : "black" })} A propos</li>
                </ul>
             </nav>
         </div>`
