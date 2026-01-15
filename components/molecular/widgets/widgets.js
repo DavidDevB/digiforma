@@ -14,7 +14,7 @@ const icons = {
   avatarFallback: "user",
 };
 
-const widgets = () => {
+const widgets = (data) => {
   return `
     <div class="widgets-grid">
 
@@ -68,7 +68,7 @@ const widgets = () => {
           </div>
           <div>
             <div class="w-title">E-learning</div>
-            <div class="w-sub"><strong>42 %</strong></div>
+            <div class="w-sub"><strong>66 %</strong></div>
             <div class="w-progress"><span style="width:42%"></span></div>
           </div>
           <div></div>
@@ -76,11 +76,11 @@ const widgets = () => {
 
         <div class="w-body">
           <div class="el-list">
-            ${elItem("ANG-BUSI-002", "Business Essentials", 0)}
-            ${elItem("ANG-CDA", "Python-Java", 50)}
-            ${elItem("ANG-PROB-002", "Résolution de Problématiques", 0)}
-            ${elItem("ANG-EMAI-002", "Emails : Comprendre et rédiger", 100)}
-            ${elItem("ANG-CONV-003", "Pratique de la conversation", 0)}
+            ${elItem(data.sequences[0].title, 100)}
+            ${elItem(data.sequences[1].title, 50)}
+            ${elItem(data.sequences[2].title, 70)}
+            ${elItem(data.sequences[3].title, 80)}
+            ${elItem(data.sequences[4].title, 30)}
           </div>
 
           <div class="el-cta">
@@ -99,7 +99,7 @@ const widgets = () => {
             <div class="w-title">Émargements</div>
             <div class="w-sub">1 signature en attente</div>
           </div>
-          ${button("Signer", "/pages/wip/wip.html")}
+          ${button("Signer", "/pages/signature/signature.html")}
         </div>
       </section>
 
@@ -148,12 +148,11 @@ const widgets = () => {
   `;
 };
 
-const elItem = (code, name, pct) => {
+const elItem = (code, pct) => {
   return `
     <div class="el-item">
       <div>
         <div class="el-code">${code}</div>
-        <div class="el-name">${name}</div>
       </div>
       <div class="el-right">
         <span class="el-pct">${pct} %</span>
