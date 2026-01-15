@@ -9,8 +9,13 @@ a.Button {
   text-decoration: none;
 }
 
+a.Button:hover {
+  background: rgb(159, 74, 138);
+}
+
 div.Widget__action {
   display: flex;
   justify-content: flex-end;
+  font-weight: 500;
 
 }

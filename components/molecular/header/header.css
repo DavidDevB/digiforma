@@ -42,6 +42,11 @@
 
 }
 
+.header__profile-name:hover {
+  background: rgb(159, 74, 138);
+
+}
+
 
 /* Dropdown sous Profil */
 .modal {
@@ -84,11 +89,12 @@
   background: none;
   border: none;
   cursor: pointer;
-
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
+
 
 .header__profile-btn svg {
   width: 20px;

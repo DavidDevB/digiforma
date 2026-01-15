@@ -25,8 +25,9 @@ export function renderHeader(showMenu) {
             class="header__profile-btn"
             type="button"
             aria-label="Aide"
+
           >
-            <span id="header-question-icon"></span>
+           <a    href="/pages/wip/wip.html"> <span id="header-question-icon"></span></a>
           </button>
 
           <!-- Bouton profil -->

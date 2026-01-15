@@ -1,5 +1,6 @@
 import { ProgressBar } from "../../atomic/progress/progressBar.js";
 import { IconCircle } from "../../molecular/icon/iconCircle.js";
+import button from '../../atomic/button/button.js'
 
 export const SequenceCard = (seq) => {
   return `
@@ -21,13 +22,8 @@ export const SequenceCard = (seq) => {
           ${ProgressBar(seq.progress, { color: "primary" })}
           <span class="ElearningSequenceWidget__progress-label">${seq.progress} %</span>
         </div>
+        ${button("Consulter", seq.href)}
 
-        <a
-          class="Button Button--size-sm Button--variant-solid Button--color-primary Button--text-only"
-          href="${seq.href}"
-        >
-          Consulter
-        </a>
       </div>
 
       ${seq.isFinished
