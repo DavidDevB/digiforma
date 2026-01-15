@@ -42,7 +42,7 @@ const widgets = () => {
             <div class="w-title">Évaluations</div>
             <div class="w-sub">4 évaluations en attente</div>
           </div>
-          ${button("Compléter", "/pages/evaluations/evaluations.html")}
+          ${button("Compléter", "/pages/wip/wip.html")}
         </div>
       </section>
 
@@ -99,7 +99,7 @@ const widgets = () => {
             <div class="w-title">Émargements</div>
             <div class="w-sub">1 signature en attente</div>
           </div>
-          ${button("Signer", "/pages/emargements/emargements.html")}
+          ${button("Signer", "/pages/wip/wip.html")}
         </div>
       </section>
 
@@ -112,7 +112,7 @@ const widgets = () => {
           <div>
             <div class="w-title">Règlement intérieur</div>
           </div>
-          ${button("Télécharger", "/assets/docs/reglement-interieur.pdf")}
+          ${button("Télécharger", "/assets/reglement-interieur.pdf")}
         </div>
       </section>
 
