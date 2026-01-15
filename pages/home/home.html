@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../../components/molecular/homeContent/homeContent.css">
     <link rel="stylesheet" href="../../components/molecular/widgets/widgets.css">
     <link rel="stylesheet" href="../../components/atomic/button/button.css">
+    <link rel="stylesheet" href="../../components/molecular/sessions/session.css" />
     <link rel="stylesheet" href="./home.css">
 </head>
 
@@ -51,7 +52,7 @@
         content.insertAdjacentHTML('beforeend', homeTitle());
         content.insertAdjacentHTML('beforeend', homeContent());
         const rightWidgets = document.getElementById("rightWidgets");
-        
+
         loadData().then(data => {
             rightWidgets.innerHTML = widgets(data);
         });

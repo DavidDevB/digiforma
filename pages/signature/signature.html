@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Signature</title>
+
+    <link rel="stylesheet" href="../../components/molecular/header/header.css">
+    <link rel="stylesheet" href="../../components/molecular/homeMenu/homeMenu.css">
+    <link rel="stylesheet" href="../../components/molecular/homeTitle/homeTitle.css">
+    <link rel="stylesheet" href="../../components/molecular/sessions/session.css" />
+    <link rel="stylesheet" href="../home/home.css">
+    <link rel="stylesheet" href="./signature.css" />
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <header id="header"></header>
+
+    <section class="AppLayout">
+        <aside class="AppLayout__sidebar" style="overflow-x:hidden">
+            <div class="V2_LeftMenuLayout__body"></div>
+        </aside>
+
+        <main class="SignaturePage">
+            <h1 style="margin-bottom:0;">DEV-WEB-007 - Web</h1>
+
+            <h2 class="SignaturePage__hint" style="margin-bottom:0;">
+                Session de formation du
+            </h2>
+
+            <p style="margin-bottom:0;">Signez ci-dessous</p>
+
+            <div class="signatureWrapper">
+                <div style="width:100%;">
+                    <div class="SignatureBox">
+                        <canvas id="signatureCanvas" width="600" height="200"></canvas>
+                    </div>
+
+                    <div class="SignatureActions">
+                        <button id="saveBtn">Enregistrer</button>
+                    </div>
+                </div>
+
+                <div>
+                    <button id="clearBtn"></button>
+                </div>
+            </div>
+        </main>
+    </section>
+
+    <script type="module">
+        import { IconSquare } from "../../components/molecular/icon/iconSquare.js";
+        import homeMenu from '../../components/molecular/homeMenu/homeMenu.js';
+        import { renderHeader, initHeader } from '../../components/molecular/header/header.js';
+
+        document.getElementById('header').innerHTML = renderHeader(true);
+        initHeader();
+
+        document.querySelector(".V2_LeftMenuLayout__body").innerHTML = homeMenu();
+        document.getElementById('clearBtn').innerHTML = IconSquare('eraser', { borderWidth: 0 });
+
+        const hintEl = document.querySelector(".SignaturePage__hint");
+
+        const params = new URLSearchParams(window.location.search);
+        const dateIso = params.get("date") || new Date().toISOString().slice(0, 10);
+        const slot = params.get("slot") || (new Date().getHours() < 12 ? "AM" : "PM");
+
+        const dateFR = new Date(dateIso).toLocaleDateString("fr-FR");
+        const timeSlot = slot === "PM" ? "(12:30 - 16:00)" : "(08:00 - 11:30)";
+
+        hintEl.textContent = `Session de formation du ${dateFR} ${timeSlot}`;
+    </script>
+
+    <script src="./signature.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+    font-family: 'satoshi', sans-serif;
+    background: #f9fafb;
+}
+
+.AppLayout {
+    display: flex;
+}
+
+.SignaturePage {
+    max-width: 900px;
+    padding: 24px;
+}
+
+.SignatureBox {
+    margin: 20px 0;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    width: 100%
+}
+
+canvas {
+    display: block;
+    width: 100%;
+    height: 350px;
+    cursor: crosshair;
+    background: white;
+    border-radius: 12px
+}
+
+.SignatureActions {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+}
+
+.signatureWrapper {
+    display: flex;
+}
+
+button {
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#clearBtn {
+    margin-top: 13px;
+    background: transparent;
+}
+
+#saveBtn {
+    background: rgb(166, 77, 144);
+    color: white;
+}
+
+#goToSignature {
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    background: rgb(166, 77, 144);
+    color: white;
+}
+
+#goToSignature:hover {
+    background: rgb(159, 74, 138);
+}
+
+#goToSignature a {
+    text-decoration: none;
+    color: white
+}
+
+canvas {
+    cursor: url("data:image/svg+xml;utf8,\
+  <svg xmlns='http://www.w3.org/2000/svg' width='32' height='32'>\
+    <circle cx='16' cy='16' r='6' fill='rgba(0,0,0,0.6)'/>\
+  </svg>") 16 16, crosshair;
+}
