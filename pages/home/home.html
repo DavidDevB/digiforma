@@ -36,6 +36,13 @@
         import homeTitle from '../../components/molecular/homeTitle/homeTitle.js';
         import homeContent from '../../components/molecular/homeContent/homeContent.js';
         import widgets from '../../components/molecular/widgets/widgets.js';
+
+        async function loadData() {
+            const response = await fetch('../../data/sequence.json');
+            const data = await response.json();
+            return data;
+        }
+
         document.getElementById('header').innerHTML = renderHeader(true);
         initHeader();
         const body = document.querySelector(".V2_LeftMenuLayout__body");
@@ -44,7 +51,10 @@
         content.insertAdjacentHTML('beforeend', homeTitle());
         content.insertAdjacentHTML('beforeend', homeContent());
         const rightWidgets = document.getElementById("rightWidgets");
-        rightWidgets.innerHTML = widgets();
+        
+        loadData().then(data => {
+            rightWidgets.innerHTML = widgets(data);
+        });
     </script>
 </body>
 
