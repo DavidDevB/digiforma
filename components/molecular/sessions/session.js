@@ -1,4 +1,3 @@
-// components/molecular/sessionAccess/sessionAccess.js
 
 export function renderSessionAccess({
   id = "sessions-access",
@@ -13,16 +12,15 @@ export function renderSessionAccess({
 
         <select class="SessionAccess__select">
           ${sessions
-            .map(
-              (s) => `
-            <option value="${s.value}" ${
-                s.value === value ? "selected" : ""
-              }>
+      .map(
+        (s) => `
+            <option value="${s.value}" ${s.value === value ? "selected" : ""
+          }>
               ${s.label}
             </option>
           `
-            )
-            .join("")}
+      )
+      .join("")}
         </select>
       </div>
     </div>

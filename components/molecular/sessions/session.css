@@ -7,9 +7,11 @@
 
 /* Label */
 .SessionAccess__label {
+  padding-top: 30px;
   font-size: 14px;
-  font-weight: 600;
   color: #111827;
+  font-size: smaller;
+  border-top: 1px solid lightgrey
 }
 
 /* Select wrapper for style */
@@ -22,8 +24,10 @@
   box-shadow: 0 8px 20px rgba(17, 24, 39, 0.08);
   color: #111827;
   font-size: 14px;
-  font-weight: 600;
   outline: none;
+  border: 1px solid lightgrey;
+  padding: 10px;
+  border-radius: 6px;
 
   appearance: none;
   -webkit-appearance: none;

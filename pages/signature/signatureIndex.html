@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Mes émargements</title>
+
+    <link rel="stylesheet" href="../../components/molecular/header/header.css">
+    <link rel="stylesheet" href="../../components/molecular/homeMenu/homeMenu.css">
+    <link rel="stylesheet" href="../home/home.css">
+    <link rel="stylesheet" href="../../style.css">
+
+    <link rel="stylesheet" href="../../components/atomic/button/button.css" />
+    <link rel="stylesheet" href="../signature/signature.css" />
+    <link rel="stylesheet" href="../../components/molecular/sessions/session.css" />
+</head>
+
+<body>
+    <header id="header"></header>
+
+    <section class="AppLayout">
+        <aside class="AppLayout__sidebar" style="overflow-x:hidden">
+            <div class="V2_LeftMenuLayout__body"></div>
+        </aside>
+
+        <main class="SignaturePage">
+            <h1 style="margin-bottom:0;">Mes émargements numériques</h1>
+
+            <h2 class="SignaturePage__hint" style="margin-bottom:0;">
+                Émargements à signer
+            </h2>
+
+            <div id="emargementsList" style="margin-top:24px; display:flex; flex-direction:row; gap:16px;"></div>
+        </main>
+    </section>
+
+    <script type="module" src="./signatureIndex.js"></script>
+</body>
+
+</html>
