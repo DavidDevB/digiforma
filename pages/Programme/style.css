@@ -6,6 +6,12 @@ body{
   background: #ffffff;
 }
 
+#header {
+    position: sticky;
+    top: 0; 
+    z-index: 1000;
+}
+
 /* ===== Layout global app ===== */
 .AppLayout{
   display: grid;
@@ -17,9 +23,9 @@ body{
 .AppLayout__sidebar{
   background: #f8fafc;
   border-right: 1px solid #e5e7eb;
-  padding: 16px 12px;
+
   position: sticky;
-  top: 0;
+  top: 80px;
   height: 100vh;
   overflow: auto;
 }
