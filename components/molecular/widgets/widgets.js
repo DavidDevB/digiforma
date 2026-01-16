@@ -14,7 +14,20 @@ const icons = {
   avatarFallback: "user",
 };
 
+const todayIso = () => new Date().toISOString().slice(0, 10);
+const keyForSignature = (dateIso, slot) => `SIGNED_${dateIso}_${slot}`;
+const isSigned = (dateIso, slot) => localStorage.getItem(keyForSignature(dateIso, slot)) === "1";
+
+const getPendingSignaturesCount = (dateIso) => {
+  const slots = ["AM", "PM"];
+  return slots.filter((slot) => !isSigned(dateIso, slot)).length;
+};
+
+
 const widgets = (data) => {
+  const dateIso = todayIso();
+  const pendingCount = getPendingSignaturesCount(dateIso);
+
   return `
     <div class="widgets-grid">
 
@@ -97,7 +110,11 @@ const widgets = (data) => {
           </div>
           <div>
             <div class="w-title">Émargements</div>
-            <div class="w-sub">1 signature en attente</div>
+            <div class="w-sub">
+              ${pendingCount === 0 ? "Aucune signature en attente"
+      : `${pendingCount} signature${pendingCount > 1 ? "s" : ""} en attente`
+    }
+</div>
           </div>
           ${button("Signer", "/pages/signature/signatureIndex.html")}
         </div>
