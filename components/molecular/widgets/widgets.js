@@ -99,7 +99,7 @@ const widgets = (data) => {
             <div class="w-title">Émargements</div>
             <div class="w-sub">1 signature en attente</div>
           </div>
-          ${button("Signer", "/pages/signature/signature.html")}
+          ${button("Signer", "/pages/signature/signatureIndex.html")}
         </div>
       </section>
 
