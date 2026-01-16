@@ -9,7 +9,7 @@ const icons = {
     dots: "three--dots--vertical",
     follow: "users",
     program: "notepad",
-    check: "sign",
+    check: "pen--fountain-writing",
     evaluation: "star",
     document: "folder",
     info: "info--circle"

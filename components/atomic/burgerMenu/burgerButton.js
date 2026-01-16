@@ -16,7 +16,7 @@ export const BurgerButton = (options = {}) => {
         aria-hidden="true"
         style="width:${iconSize}px; height:${iconSize}px; cursor:pointer;"
       >
-        <use href="./assets/icons.svg#burger--menu"></use>
+        <use href="./assets/icons2.svg#burger--menu"></use>
       </svg>
     </button>
 

@@ -7,7 +7,7 @@ const icons = {
   evaluations: "star",
   documents: "folder",
   elearning: "three--dots--vertical",
-  signatures: "sign",
+  signatures: "pen--fountain-writing",
   rules: "download",
   trainers: "users",
 
