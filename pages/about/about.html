@@ -133,7 +133,7 @@ Si vous posez une question tout le monde pourra y répondre et de même vous aur
         document.getElementById('header').innerHTML = renderHeader(true);
         initHeader();
 
-        document.querySelectorAll(".return").forEach(el => el.insertAdjacentHTML("afterbegin", `<div ><a href="/pages/home/home.html">${IconSquare("arrow--left")}</a></div>`));
+        document.querySelectorAll(".return").forEach(el => el.insertAdjacentHTML("afterbegin", `<div ><a href="/pages/home/home.html">${IconSquare("arrow--left", { borderWidth: 0 })}</a></div>`));
     </script>
 </body>
 </html>
