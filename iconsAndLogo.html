@@ -45,10 +45,10 @@
             "star",
             "folder",
             "three--dots--vertical",
-            "sign",
+            "pen--fountain-writing",
             "download",
             "user",
-            "location",
+            "localisation",
             "question",
             "users",
             "award--alt",
@@ -98,6 +98,16 @@
 
             console.log("Burger menu clicked, open =", isOpen);
         });
+        const spriteUrl = new URL("/assets/icons2.svg", location.origin).href;
+
+        const txt = await (await fetch(spriteUrl)).text();
+        const doc = new DOMParser().parseFromString(txt, "image/svg+xml");
+
+        // List all ids (symbols + groups + anything with id)
+        const allIds = [...doc.querySelectorAll("[id]")].map((el) => el.id).sort();
+        console.log("Total ids:", allIds.length);
+        console.table(allIds);
+
     </script>
 
 </body>

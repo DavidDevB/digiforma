@@ -17,7 +17,7 @@ export const Stats = ({ globalProgress, totalSequences }) => {
         <div class="ModulesPageLayout__learning-path-counts-text">
 
           <small>Nombre de séquences</small>
-          <p>${totalSequences}</p>
+          <p style="color:rgb(166, 77, 144);">${totalSequences}</p>
         </div>
       </div>
     </div>
