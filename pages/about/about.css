@@ -35,17 +35,33 @@ section {
 
 #return-button {
     font-size: 16px;
-  color: white;
-  background: rgb(166, 77, 144);
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  padding: 6px 8px;
-  text-decoration: none;
+    color: white;
+    background: rgb(166, 77, 144);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 6px 8px;
+    text-decoration: none;
 }
 
+#return-button:hover {
+    font-size: 16px;
+    color: white;
+    background: rgb(159, 74, 138);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 6px 8px;
+    text-decoration: none;
+}
 
-h1, h2, h3 {
+#IconSquare:hover {
+    background: rgb(159, 74, 138);
+}
+
+h1,
+h2,
+h3 {
     background: linear-gradient(rgba(255, 0, 0, 0) 65%, rgba(210, 210, 214, 0.6) 35%);
     color: rgb(127, 119, 179);
 }
